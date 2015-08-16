@@ -1,0 +1,99 @@
+body{
+  margin-top: 50px;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+page-tweets{
+  display:flex;
+  flex-direction:row;
+  height: 100%;
+  width: 100%;
+  position:absolute;
+}
+tweet-sidebar{
+  width: 30%;
+  background: #fff;
+  height: 100%;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+tweet-sidebar.sidebar-collapsed{
+  width: 35px;
+  padding: 0px;
+}
+tweet-sidebar.sidebar-collapsed .collapsed-content{
+  display: none;
+}
+tweet-main{
+  background: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+}
+tweet-topbar{
+  height: 250px;
+  background: #BFE0EC;
+  padding: 20px;
+  flex-shrink: 0;
+}
+tweet-topbar.topbar-collapsed{
+  padding: 0px;
+  height: 35px;
+}
+tweet-topbar.topbar-collapsed .collapsed-content{
+  display: none;
+}
+tweet-content{
+  flex-grow: 1;
+  background: #f1f1f1;
+  overflow-y: auto;
+  height: 100%;
+  padding: 20px;
+}
+
+.dp-collapse{
+  background: #337ab7;
+  width: 35px;
+  text-align:center;
+  padding: 10px;
+  cursor:pointer;
+  display:block;
+}
+.dp-collapse:hover{
+  background: #fff;
+}
+.dp-collapse-right{
+  float: right;
+}
+.dp-collapse-center{
+  margin: auto;
+  text-align:center;
+}
+.starred{
+  color: yellow;
+}
+dp-star{
+  cursor:pointer;
+  font-size: 30px;
+  padding-top: 20px;
+}
+.dp-tweet-icon{
+  font-size: 20px;
+  color: #ccc;
+  margin-right: 15px;
+}
+.dp-tweet{
+  background-color: #fff;
+  padding: 20px;
+}
+.dp-tweets{
+  padding: 20px;
+}
+textarea {
+  resize: none;
+}

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "module": "commonjs"
+  },
+  "awesomeTypescriptLoaderOptions": {
+    "emitRequireType": false
+  },
+  "files": [
+    "app/index.ts",
+    "app/modules/core/index.ts"
+  ],
+  "version": "1.5.4"
+}
