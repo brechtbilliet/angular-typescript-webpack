@@ -6,4 +6,5 @@ Unittests will be added in the near future
 
 ## How to run:
 type npm install
+
 type npm start
