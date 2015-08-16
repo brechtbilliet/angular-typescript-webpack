@@ -6,9 +6,6 @@
   "scripts": {
     "build": "NODE_ENV=dev && webpack --config webpack.build.js --bail -p --color",
     "start": "NODE_ENV=dev && webpack --config webpack.dev.js --watch"
-  //todo,
-  //    "test": "NODE_ENV=test&& karma start",
-  //    "test:live": "NODE_ENV=test&& karma start --auto-watch --no-single-run"
   },
   "author": "",
   "license": "ISC",
