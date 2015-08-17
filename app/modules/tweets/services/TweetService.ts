@@ -1,4 +1,6 @@
+/// <reference path="../../../_all.ts" />
 import {Tweet} from '../entities/Tweet';
+import * as _ from 'lodash';
 
 export interface ITweetService{
     getAll(): Array<Tweet>;

@@ -1,6 +1,5 @@
 import {Tweet} from '../entities/Tweet';
 import {SharedModel, ISharedModel} from './Shared';
-import Moment = require('moment');
 
 export interface ITopbarModel {
     tweetContent: string;

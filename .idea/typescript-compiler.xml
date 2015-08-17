@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="TypeScriptCompiler">
-    <option name="isCompilerEnabled" value="true" />
-    <option name="typeScriptServiceDirectory" value="/usr/local/lib/node_modules/typescript/bin" />
-    <option name="typeScriptCompilerParams" value="--module &quot;commonjs&quot; --target &quot;es5&quot;" />
-    <option name="versionType" value="SERVICE_DIRECTORY" />
-  </component>
-</project>

@@ -1,6 +1,7 @@
 /// <reference path="../../../../_all.ts" />
 import * as Root from '../../models/Root';
 import {ISharedModel} from '../../models/Shared';
+import {Tweet} from '../../entities/Tweet';
 class PageTweetsController{
     public sharedModel: ISharedModel;
     constructor(){
