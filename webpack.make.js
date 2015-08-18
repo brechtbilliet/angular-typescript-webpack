@@ -2,6 +2,7 @@
 
 var webpack = require('webpack');
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = function makeWebpackConfig(options) {
     var browserSync = new BrowserSyncPlugin({
@@ -19,30 +20,20 @@ module.exports = function makeWebpackConfig(options) {
         entry: ['./app/index.ts'],
         output: {
             filename: 'build.js',
-            path: 'dev'
+            path: options.BUILD?'dist': 'dev'
         },
         resolve: {
             root: __dirname,
             extensions: ['','.ts','.js','.json'],
             alias: {
-                // we can switch between development and production
-                // 'angular2': 'node_modules/angular2/ts',
-                // 'angular2': 'angular2/ts/dev',
-
-                'app': 'app',
-
-                // 'components': 'src/app/components'
-                // 'services': '/app/services/*.js',
-                // 'stores/*': '/app/stores/*.js'
-                // 'angular2': 'angular2/es6/dev'
+                'app': 'app'
             }
         },
-
         module: {
             loaders: [
                 {
                     test: /\.ts$/,
-                    loader: 'simple-typescript',
+                    loader: 'ts',
                     exclude: /node_modules/
                 },
                  {
@@ -80,8 +71,19 @@ module.exports = function makeWebpackConfig(options) {
         config.devtool = 'source-map';
         config.plugins.push(browserSync);
         config.devServer = {
-            contentBase: './dist'
+            contentBase: './dev'
         };
+    }
+    if (options.BUILD) {
+        config.plugins.push(new HtmlWebpackPlugin({
+            template: './app/index.html',
+            inject: 'body',
+            minify: options.BUILD
+        }));
+        config.plugins.push(new webpack.NoErrorsPlugin(),
+            // Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
+            // Minify all javascript, switch loaders to minimizing mode
+            new webpack.optimize.UglifyJsPlugin());
     }
     if (options.TEST) {
         config.context = __dirname + '/app';

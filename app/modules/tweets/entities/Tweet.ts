@@ -1,4 +1,4 @@
-export class Tweet {
+export default class Tweet {
     user:String;
     content:String;
     starred:Boolean;
