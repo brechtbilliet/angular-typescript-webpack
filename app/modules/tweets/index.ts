@@ -8,13 +8,16 @@ import  SidebarModel from './models/SidebarModel';
 import  TopbarModel from './models/TopbarModel';
 import TweetService from './services/TweetService';
 
-import PageTweetsComponent from './components/pageTweets/PageTweetsComponent';
+import {PageTweetsComponent} from './components/pageTweets/PageTweetsComponent';
 import TweetContentComponent from './components/tweetContent/TweetContentComponent';
 import TweetMainComponent from './components/tweetMain/TweetMainComponent';
 import TweetSidebarComponent from './components/tweetSidebar/TweetSidebarComponent';
 import TweetTopbarComponent from './components/tweetTopbar/TweetTopbarComponent';
 import {config as routesConfig} from './configs/routes';
-
+if(ON_TEST){
+    require('./components/pageTweets/PageTweetsComponent.spec');
+    require('./components/tweetTopbar/TweetTopbarComponent.spec');
+}
 module tweets {
     angular.module('app.tweets', ['ngRoute'])
         .service('IRootModel', RootModel)

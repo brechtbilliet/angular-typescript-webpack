@@ -1,7 +1,9 @@
 /// <reference path="../../../../_all.ts" />
 import PageTweetsController from './PageTweetsController';
-
-export default class PageTweetsComponent {
+export interface IIsolateScope extends ng.IScope{
+    pageVm:PageTweetsController;
+}
+export class PageTweetsComponent implements ng.IDirective{
     public restrict = 'E';
     public controllerAs = 'pageVm';
     public template = require('./index.html');

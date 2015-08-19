@@ -1,6 +1,8 @@
 /// <reference path="../../../../_all.ts" />
 import TweetTopbarController from './TweetTopbarController';
-
+export interface IIsolateScope extends ng.IScope{
+    topbarVm:TweetTopbarController;
+}
 export class TweetTopbarComponent {
     public restrict = 'E';
     public controllerAs = 'topbarVm';

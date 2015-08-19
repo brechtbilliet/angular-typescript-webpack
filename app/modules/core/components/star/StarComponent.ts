@@ -1,6 +1,12 @@
 /// <reference path="../../../../_all.ts" />
 import {StarController} from './StarController';
-export class StarComponent{
+export interface IIsolateScope extends ng.IScope{
+    starVm:StarController;
+}
+export interface IComponentAttributes{
+    starred: boolean
+}
+export class StarComponent implements ng.IDirective{
     public restrict = 'E';
     public controllerAs = 'starVm';
     public bindToController = true;
