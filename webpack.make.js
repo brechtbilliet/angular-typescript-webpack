@@ -87,7 +87,7 @@ module.exports = function makeWebpackConfig(options) {
     }
     if (options.TEST) {
         config.context = __dirname + '/app';
-        config.entry = './index.js';
+        config.entry = './index.ts';
     }
     config.plugins.push(new webpack.DefinePlugin({
         ON_TEST: process.env.NODE_ENV === 'test'

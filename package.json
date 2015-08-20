@@ -4,10 +4,10 @@
   "description": "",
   "main": "/",
   "scripts": {
-    "build": "NODE_ENV=dev && webpack --config webpack.build.js --bail -p --color",
-    "start": "NODE_ENV=dev && webpack --config webpack.dev.js --watch",
-    "test": "NODE_ENV=test&& karma start",
-    "test:live": "NODE_ENV=test&& karma start --auto-watch --no-single-run"
+    "build": "SET NODE_ENV=dev && webpack --config webpack.build.js --bail -p --color",
+    "start": "SET NODE_ENV=dev && webpack --config webpack.dev.js --watch",
+    "test": "SET NODE_ENV=test&& karma start",
+    "test:live": "SET NODE_ENV=test&& karma start --auto-watch --no-single-run"
   },
   "author": "",
   "license": "ISC",
@@ -23,12 +23,13 @@
     "file-loader": "^0.8.4",
     "html-webpack-plugin": "^1.6.1",
     "jasmine-core": "^2.3.4",
-    "karma": "^0.12.31",
+    "karma": "^0.13.3",
     "karma-chrome-launcher": "^0.1.7",
     "karma-coverage": "^0.5.0",
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs2-launcher": "^0.3.1",
     "karma-spec-reporter": "0.0.20",
+    "karma-typescript-preprocessor": "0.0.19",
     "karma-webpack": "^1.5.0",
     "moment": "^2.10.6",
     "node-sass": "^3.2.0",
@@ -36,6 +37,7 @@
     "raw-loader": "^0.5.1",
     "sass-loader": "^2.0.1",
     "simple-typescript-loader": "^1.0.1",
+    "sinon": "^1.15.4",
     "source-map-loader": "^0.1.5",
     "style-loader": "^0.12.3",
     "typescript": "^1.5.3",
@@ -49,9 +51,8 @@
     "angular-route": "^1.4.3",
     "bootstrap": "^3.3.5",
     "font-awesome": "^4.4.0",
-    "inversify": "^1.0.0",
     "jquery": "^2.1.4",
-    "ts-loader": "^0.5.0",
-    "typeioc": "^1.2.9"
+    "sinon": "^1.15.4",
+    "ts-loader": "^0.5.0"
   }
 }
