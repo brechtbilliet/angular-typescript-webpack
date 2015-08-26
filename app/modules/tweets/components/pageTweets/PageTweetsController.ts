@@ -1,4 +1,4 @@
-import {ISharedModel, IRootModel} from '../../models/Interfaces';
+import {ISharedModel, IRootModel, ITopbarModel} from '../../models/Interfaces';
 
 export default class PageTweetsController{
     public sharedModel: ISharedModel;

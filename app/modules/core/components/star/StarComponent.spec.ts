@@ -13,7 +13,6 @@ describe('Component StarComponent', () => {
         it('it should set the default starred value to false', () => {
             var attributes:IComponentAttributes = {starred: false};
             var vm = directiveTest.createComponent(attributes).starVm;
-
             expect(vm.starred).toBe(false);
         });
         it('should update the ui accordingly', () => {

@@ -1,5 +1,5 @@
 import {ISharedModel, ITopbarModel} from './Interfaces';
-import Tweet from '../entities/Tweet';
+import {Tweet} from '../entities/Tweet';
 
 export default class TopbarModel implements ITopbarModel {
     public tweetContent:string;
@@ -12,7 +12,7 @@ export default class TopbarModel implements ITopbarModel {
         this.sharedModel.toggleTopbar();
     }
     public addTweet(): void {
-        this.sharedModel.tweets.push(new Tweet('@brecht', this.tweetContent, false));
+        this.sharedModel.tweets.push(Tweet.createInstance('@brecht', this.tweetContent, false));
         this.tweetContent = '';
     }
     public static $inject = ['ISharedModel'];

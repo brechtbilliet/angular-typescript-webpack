@@ -6,17 +6,15 @@ import {IRootModel, ISharedModel, IContentModel, ITopbarModel, ISidebarModel} fr
 
 describe('Component StarComponent', () => {
     var directiveTest:ComponentTest<IIsolateScope, any>;
-    var rootModelMock = <IRootModel>{},
-        sharedModelMock = <ISharedModel>{},
-        contentModelMock = <IContentModel>{},
-        sidebarModelMock = <ISidebarModel>{},
-        topbarModelMock = <ITopbarModel>{};
+    var rootModelMock = <IRootModel>{
+        sharedModel: <ISharedModel>{},
+        contentModel: <IContentModel>{},
+        sidebarModel: <ISidebarModel>{},
+        topbarModel: <ITopbarModel>{}
+    };
     beforeEach(angular.mock.module('app.tweets', ($provide)=>{
         $provide.service('IRootModel', () =>  rootModelMock);
-        $provide.service('ISharedModelMock', () => sharedModelMock);
-        $provide.service('IContentModelMock', () => contentModelMock);
-        $provide.service('ISidebarModelMock', () => sidebarModelMock);
-        $provide.service('ITopbarModelMock', () => topbarModelMock);
+
     }));
     beforeEach(() => {
         directiveTest = new ComponentTest<IIsolateScope, Object>('<page-tweets></page-tweets>');

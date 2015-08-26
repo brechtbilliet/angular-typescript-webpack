@@ -1,4 +1,4 @@
-import Tweet from '../entities/Tweet';
+import {Tweet} from '../entities/Tweet';
 import {ITweetService} from './Interfaces';
 
 export default class TweetService implements ITweetService{

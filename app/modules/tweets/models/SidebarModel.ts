@@ -1,5 +1,5 @@
 import {ISharedModel, ISidebarModel} from './Interfaces';
-import Tweet from '../entities/Tweet';
+import {Tweet} from '../entities/Tweet';
 
 export default class SidebarModel implements ISidebarModel {
     private sharedModel: ISharedModel;

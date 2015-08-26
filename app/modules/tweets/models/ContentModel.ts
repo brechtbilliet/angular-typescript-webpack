@@ -1,5 +1,5 @@
 import {ISharedModel, IContentModel} from './Interfaces';
-import Tweet from '../entities/Tweet';
+import {Tweet} from '../entities/Tweet';
 
 export default class ContentModel implements IContentModel {
     private sharedModel: ISharedModel;
