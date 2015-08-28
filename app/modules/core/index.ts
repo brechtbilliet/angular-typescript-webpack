@@ -8,6 +8,6 @@ if(ON_TEST){
 }
 export module core{
     angular.module('app.core', [])
-        .directive('page', PageComponent.Factory())
-        .directive('star', StarComponent.Factory());
+        .directive('page', () => new PageComponent())
+        .directive('star', () => new StarComponent());
 }

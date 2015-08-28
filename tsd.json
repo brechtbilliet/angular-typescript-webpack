@@ -26,13 +26,7 @@
     "jasmine/jasmine.d.ts": {
       "commit": "5109e1269d6ab8e8e73b1a5e85d8ceb836d3099f"
     },
-    "inversify/inversify.d.ts": {
-      "commit": "832c51db815c766fa42a2e995a7b3136ec6d15c2"
-    },
     "angularjs/angular-mocks.d.ts": {
-      "commit": "efa0c1196d7280640e624ac1e7fa604502e7bd63"
-    },
-    "sinon/sinon.d.ts": {
       "commit": "efa0c1196d7280640e624ac1e7fa604502e7bd63"
     }
   }

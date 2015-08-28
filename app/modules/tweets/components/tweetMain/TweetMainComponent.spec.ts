@@ -1,24 +1,21 @@
 /// <reference path="../../../../_all.ts" />
 import 'angular-mocks';
-import {PageTweetsComponent,IIsolateScope }from './PageTweetsComponent';
+import {TweetMainComponent,IIsolateScope }from './TweetMainComponent';
 import ComponentTest from '../../../../util/test/ComponentTest';
 import {RootModelMock} from '../../models/Mocks';
-
-describe('Component PageTweetsComponent', () => {
+import {IRootModel} from '../../models/Interfaces';
+describe('Component TweetSidebarComponent', () => {
     var directiveTest:ComponentTest<IIsolateScope, any>;
-    var rootModelMock = new RootModelMock();
+    var rootModelMock: IRootModel = new RootModelMock();
     beforeEach(angular.mock.module('app.tweets', ($provide)=>{
         $provide.service('IRootModel', () =>  rootModelMock);
-
     }));
     beforeEach(() => {
-        directiveTest = new ComponentTest<IIsolateScope, Object>('<page-tweets></page-tweets>');
+        directiveTest = new ComponentTest<IIsolateScope, Object>('<tweet-main></tweet-main>');
     });
 
     it('should expose the sharedModel', () =>{
-        var vm = directiveTest.createComponent({}).pageVm;
+        var vm = directiveTest.createComponent({}).mainVm;
         expect(vm.sharedModel).toBe(rootModelMock.sharedModel);
     });
-
 });
-

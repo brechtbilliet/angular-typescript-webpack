@@ -15,11 +15,5 @@ export class StarComponent implements ng.IDirective{
     }
     public template = require('./index.html');
     public controller = StarController;
-    public static Factory() {
-        var directive = () => {
-            return new StarComponent();
-        }
-        return directive
-    }
 }
 export default StarComponent;

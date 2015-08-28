@@ -1,6 +1,6 @@
 import {ISharedModel, IContentModel, ISidebarModel, ITopbarModel, IRootModel} from './Interfaces';
 
-export default class RootModel implements IRootModel{
+export class RootModel implements IRootModel{
     private _sharedModel: ISharedModel;
     private _sidebarModel: ISidebarModel;
     private _topbarModel: ITopbarModel;

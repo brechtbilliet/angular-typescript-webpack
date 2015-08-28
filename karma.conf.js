@@ -26,8 +26,11 @@ module.exports = function karmaConfig(config) {
         singleRun: true,
         // Configure code coverage reporter
         coverageReporter: {
-            dir: 'reports/coverage/',
-            type: 'html'
+            reporters: [{
+                dir: 'reports/coverage/',
+                type: 'html'},
+                //{"type": "text"}
+            ]
         },
         webpack: webpackConfig,
         plugins: [

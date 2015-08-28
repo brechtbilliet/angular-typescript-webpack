@@ -3,7 +3,7 @@ import {Tweet} from '../entities/Tweet';
 import {ISharedModel} from './Interfaces';
 import {ITweetService} from '../services/Interfaces';
 
-export default class SharedModel implements ISharedModel{
+export class SharedModel implements ISharedModel{
     private _topbarCollapsed: Boolean;
     private _sidebarCollapsed: Boolean;
     

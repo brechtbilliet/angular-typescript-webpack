@@ -1,7 +1,7 @@
 import {ISharedModel, IContentModel} from './Interfaces';
 import {Tweet} from '../entities/Tweet';
 
-export default class ContentModel implements IContentModel {
+export class ContentModel implements IContentModel {
     private sharedModel: ISharedModel;
     public tweets: Array<Tweet>;
     constructor(sharedModel:ISharedModel){

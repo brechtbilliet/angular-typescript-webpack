@@ -1,7 +1,7 @@
 import {ISharedModel, ITopbarModel} from './Interfaces';
 import {Tweet} from '../entities/Tweet';
 
-export default class TopbarModel implements ITopbarModel {
+export class TopbarModel implements ITopbarModel {
     public tweetContent:string;
 
     private sharedModel: ISharedModel;

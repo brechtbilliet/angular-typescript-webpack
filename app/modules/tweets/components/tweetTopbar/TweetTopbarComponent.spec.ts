@@ -2,15 +2,11 @@
 import 'angular-mocks';
 import {TweetTopbarComponent,IIsolateScope }from './TweetTopbarComponent';
 import ComponentTest from '../../../../util/test/ComponentTest';
-import {IRootModel, ISharedModel, IContentModel, ITopbarModel, ISidebarModel} from '../../models/Interfaces';
-import RootModel from '../../models/RootModel';
-describe('Component StarComponent', () => {
+import {RootModelMock} from '../../models/Mocks';
+import {IRootModel} from '../../models/Interfaces';
+describe('Component TweetTopbarComponent', () => {
     var directiveTest:ComponentTest<IIsolateScope, any>;
-    var rootModelMock: IRootModel=  <IRootModel> {};
-    rootModelMock.contentModel = <IContentModel>{};
-    rootModelMock.sharedModel = <ISharedModel>{};
-    rootModelMock.topbarModel = <ITopbarModel>{};
-    rootModelMock.sidebarModel = <ISidebarModel>{};
+    var rootModelMock: IRootModel = new RootModelMock();
     beforeEach(angular.mock.module('app.tweets', ($provide)=>{
         $provide.service('IRootModel', () =>  rootModelMock);
     }));
@@ -22,19 +18,26 @@ describe('Component StarComponent', () => {
         var vm = directiveTest.createComponent({}).topbarVm;
         expect(vm.sharedModel).toBe(rootModelMock.sharedModel);
     });
-    it('should expose the contentModel', () =>{
+    it('should expose the topbarModel', () =>{
         var vm = directiveTest.createComponent({}).topbarVm;
-        expect(vm.model).toEqual(rootModelMock.contentModel);
+        expect(vm.model).toEqual(rootModelMock.topbarModel);
     });
 
-    describe('on toggleCollapsed()', function(){
-        it('should collapse the topbar', function(){
+    describe('on toggleCollapsed()', () =>{
+        it('should collapse the topbar', () => {
             var vm = directiveTest.createComponent({}).topbarVm;
-            rootModelMock.topbarModel.toggleCollapsed = angular.noop;
             spyOn(rootModelMock.topbarModel, 'toggleCollapsed');
             vm.toggleCollapsed();
             expect(vm.model.toggleCollapsed).toHaveBeenCalled();
         });
+    });
+    describe('on post()', () =>{
+        it('should post a tweet', () =>{
+            var vm = directiveTest.createComponent({}).topbarVm;
+            spyOn(rootModelMock.topbarModel, 'addTweet');
+            vm.post();
+            expect(vm.model.addTweet).toHaveBeenCalled();
+        })
     });
 });
 
