@@ -10,3 +10,17 @@ type npm install
 type tsd install
 
 type npm start
+
+Change package.config for osx
+
+ "scripts": {
+ 
+    "build": "set NODE_ENV=dev && webpack --config webpack.build.js --bail -p --color",
+    
+    "start": "set NODE_ENV=dev && webpack --config webpack.dev.js --watch",
+    
+    "test": "set NODE_ENV=test&& karma start",
+    
+    "test:live": "set NODE_ENV=test&& karma start --auto-watch --no-single-run"
+    
+  },
