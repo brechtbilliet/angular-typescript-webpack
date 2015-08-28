@@ -30,16 +30,16 @@ module.exports = function makeWebpackConfig(options) {
             }
         },
         module: {
-            postLoaders: [
-                {
-                    test: /\.ts$/,
-                    exclude: [
-                        /node_modules/,
-                        /spec.ts$/
-                    ],
-                    loader: 'istanbul-instrumenter'
-                }
-            ],
+            //postLoaders: [
+            //    {
+            //        test: /\.ts$/,
+            //        exclude: [
+            //            /node_modules/,
+            //            /spec.ts$/
+            //        ],
+            //        loader: 'istanbul-instrumenter'
+            //    }
+            //],
             loaders: [
 
                 {
