@@ -1,9 +1,9 @@
 import "angular-mocks";
-import { IIsolateScope }from "./TweetTopbarComponent";
-import ComponentTest from "../../../../util/test/ComponentTest";
+import {IIsolateScope} from "./TweetTopbarComponent";
+import {ComponentTest} from "../../../../util/test/ComponentTest";
 import {RootModelMock} from "../../models/spec/Mocks";
 import {IRootModel} from "../../models/Interfaces";
-import TweetTopbarController from "./TweetTopbarController";
+import {TweetTopbarController} from "./TweetTopbarController";
 describe("Component TweetTopbarComponent", () => {
     var directiveTest: ComponentTest<IIsolateScope, any>;
     var rootModelMock: IRootModel = new RootModelMock();

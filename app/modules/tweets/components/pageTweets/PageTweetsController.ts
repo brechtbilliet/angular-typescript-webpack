@@ -1,6 +1,6 @@
 import {ISharedModel, IRootModel} from "../../models/Interfaces";
 
-export default class PageTweetsController {
+export class PageTweetsController {
     public static $inject: Array<string> = ["IRootModel"];
     public sharedModel: ISharedModel;
 

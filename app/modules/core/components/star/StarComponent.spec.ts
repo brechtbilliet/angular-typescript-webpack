@@ -1,6 +1,6 @@
 import "angular-mocks";
-import { IIsolateScope, IComponentAttributes} from "./StarComponent";
-import ComponentTest from "../../../../util/test/ComponentTest";
+import {IIsolateScope, IComponentAttributes} from "./StarComponent";
+import {ComponentTest} from "../../../../util/test/ComponentTest";
 import {StarController} from "./StarController";
 
 describe("Component StarComponent", () => {

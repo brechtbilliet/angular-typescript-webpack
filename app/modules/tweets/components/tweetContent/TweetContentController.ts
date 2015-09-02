@@ -1,6 +1,6 @@
 import {IRootModel, IContentModel} from "../../models/Interfaces";
 
-export default class TweetContentController {
+export class TweetContentController {
     public static $inject: Array<string> = ["IRootModel"];
     public model: IContentModel;
 

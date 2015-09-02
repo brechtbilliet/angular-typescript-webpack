@@ -1,4 +1,4 @@
-import TweetSidebarController from "./TweetSidebarController";
+import {TweetSidebarController} from "./TweetSidebarController";
 export interface IIsolateScope extends ng.IScope{
     sidebarVm: TweetSidebarController;
 }
@@ -8,4 +8,3 @@ export class TweetSidebarComponent {
     public template: string = require("./index.html");
     public controller: Function = TweetSidebarController;
 }
-export default TweetSidebarComponent;

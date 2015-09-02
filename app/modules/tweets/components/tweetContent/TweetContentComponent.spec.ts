@@ -1,11 +1,13 @@
 import "angular-mocks";
-import { IIsolateScope }from "./TweetContentComponent";
-import ComponentTest from "../../../../util/test/ComponentTest";
+import {IIsolateScope}from "./TweetContentComponent";
+import {ComponentTest} from "../../../../util/test/ComponentTest";
 import {RootModelMock} from "../../models/spec/Mocks";
-import TweetContentController from "./TweetContentController";
+import {TweetContentController} from "./TweetContentController";
+import {IRootModel} from "../../models/Interfaces";
+
 describe("Component TweetContentComponent", () => {
     var directiveTest: ComponentTest<IIsolateScope, any>;
-    var rootModelMock = new RootModelMock();
+    var rootModelMock: IRootModel = new RootModelMock();
     beforeEach(angular.mock.module("app.tweets", ($provide: any) => {
         $provide.service("IRootModel", () =>  rootModelMock);
     }));
@@ -17,6 +19,4 @@ describe("Component TweetContentComponent", () => {
         var vm: TweetContentController = directiveTest.createComponent({}).contentVm;
         expect(vm.model).toBe(rootModelMock.contentModel);
     });
-
 });
-

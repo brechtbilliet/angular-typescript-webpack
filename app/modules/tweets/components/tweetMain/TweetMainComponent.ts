@@ -1,4 +1,4 @@
-import TweetMainController from "./TweetSidebarController";
+import {TweetMainController} from "./TweetSidebarController";
 export interface IIsolateScope extends ng.IScope{
     mainVm: TweetMainController;
 }

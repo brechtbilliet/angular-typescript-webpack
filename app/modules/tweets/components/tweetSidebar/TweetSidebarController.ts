@@ -1,6 +1,6 @@
 import {IRootModel, ISharedModel, ISidebarModel} from "../../models/Interfaces";
 
-export default class TweetSidebarController {
+export class TweetSidebarController {
     public static $inject: Array<string> = ["IRootModel"];
     public model: ISidebarModel;
     public sharedModel: ISharedModel;

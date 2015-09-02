@@ -1,6 +1,6 @@
 import {IRootModel, ISharedModel} from "../../models/Interfaces";
 
-export default class TweetMainController {
+export class TweetMainController {
     public static $inject: Array<string> = ["IRootModel"];
     public sharedModel: ISharedModel;
     private _rootModel: IRootModel;

@@ -1,4 +1,4 @@
-import PageTweetsController from "./PageTweetsController";
+import {PageTweetsController} from "./PageTweetsController";
 export interface IIsolateScope extends ng.IScope {
     pageVm: PageTweetsController;
 }

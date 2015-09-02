@@ -1,4 +1,4 @@
-export default class ComponentTest<TComponentScope extends ng.IScope, TAttributes> {
+export class ComponentTest<TComponentScope extends ng.IScope, TAttributes> {
     public scope: TComponentScope;
     public element: ng.IAugmentedJQuery;
     public isolateScope: TComponentScope;

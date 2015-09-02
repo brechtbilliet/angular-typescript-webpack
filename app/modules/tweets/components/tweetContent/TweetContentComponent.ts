@@ -1,4 +1,4 @@
-import TweetContentController from "./TweetContentController";
+import {TweetContentController} from "./TweetContentController";
 export interface IIsolateScope extends ng.IScope{
     contentVm: TweetContentController;
 }
