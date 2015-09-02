@@ -1,20 +1,22 @@
-import {IRootModel, ISharedModel, ITopbarModel} from '../../models/Interfaces';
+import {IRootModel, ISharedModel, ITopbarModel} from "../../models/Interfaces";
 
-export default class TweetTopbarController{
+export default class TweetTopbarController {
+    public static $inject: Array<string> = ["IRootModel"];
     public model: ITopbarModel;
     public sharedModel: ISharedModel;
-    private _rootModel:IRootModel;
+    private _rootModel: IRootModel;
 
-    constructor(rootModel: IRootModel){
+    constructor(rootModel: IRootModel) {
         this._rootModel = rootModel;
         this.sharedModel = this._rootModel.sharedModel;
         this.model = this._rootModel.topbarModel;
     }
-    public toggleCollapsed():void{
+
+    public toggleCollapsed(): void {
         this.model.toggleCollapsed();
     }
-    public post():void{
+
+    public post(): void {
         this.model.addTweet();
     }
-    public static $inject = ['IRootModel'];
 }

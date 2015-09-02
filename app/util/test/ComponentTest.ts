@@ -1,22 +1,21 @@
-/// <reference path="../../_all.ts" />
 export default class ComponentTest<TComponentScope extends ng.IScope, TAttributes> {
-    private _template:string;
-    private _$rootScope:ng.IScope;
-    private _$compile:ng.ICompileService;
+    public scope: TComponentScope;
+    public element: ng.IAugmentedJQuery;
+    public isolateScope: TComponentScope;
 
-    public scope:TComponentScope;
-    public element:ng.IAugmentedJQuery;
+    private _template: string;
+    private _$rootScope: ng.IScope;
+    private _$compile: ng.ICompileService;
 
-    public isolateScope:TComponentScope;
-
-    constructor(template:string) {
+    constructor(template: string) {
         this._template = template;
         angular.mock.inject(($rootScope, $compile) => {
             this._$rootScope = $rootScope;
             this._$compile = $compile;
         });
     }
-    public createComponent(attributes:TAttributes):TComponentScope {
+
+    public createComponent(attributes: TAttributes): TComponentScope {
         this.scope = <TComponentScope>this._$rootScope.$new();
         for (var key in attributes) {
             this.scope[key] = attributes[key];
@@ -24,7 +23,7 @@ export default class ComponentTest<TComponentScope extends ng.IScope, TAttribute
         this.element = this._$compile(this._template)(this.scope);
         this.scope.$digest();
         this.isolateScope = <TComponentScope>this.element.isolateScope();
-        if(this.isolateScope != null){
+        if (this.isolateScope != null) {
             return this.isolateScope;
         }
         return this.scope;

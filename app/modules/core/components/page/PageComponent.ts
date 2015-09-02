@@ -1,5 +1,4 @@
-/// <reference path="../../../../_all.ts" />
 export default class PageComponent {
-    public restrict = 'E';
-    public template = require('./index.html');
+    public restrict: string = "E";
+    public template: string = require("./index.html");
 }

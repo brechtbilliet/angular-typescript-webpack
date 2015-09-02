@@ -1,12 +1,11 @@
-/// <reference path="../../../../_all.ts" />
-import TweetSidebarController from './TweetSidebarController';
+import TweetSidebarController from "./TweetSidebarController";
 export interface IIsolateScope extends ng.IScope{
-    sidebarVm:TweetSidebarController;
+    sidebarVm: TweetSidebarController;
 }
 export class TweetSidebarComponent {
-    public restrict = 'E';
-    public controllerAs = 'sidebarVm';
-    public template = require('./index.html');
-    public controller = TweetSidebarController;
+    public restrict: string = "E";
+    public controllerAs: string = "sidebarVm";
+    public template: string = require("./index.html");
+    public controller: Function = TweetSidebarController;
 }
 export default TweetSidebarComponent;

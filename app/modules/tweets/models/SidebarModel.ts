@@ -1,15 +1,17 @@
-import {ISharedModel, ISidebarModel} from './Interfaces';
-import {Tweet} from '../entities/Tweet';
+import {ISharedModel, ISidebarModel} from "./Interfaces";
+import {Tweet} from "../entities/Tweet";
 
 export class SidebarModel implements ISidebarModel {
-    private sharedModel: ISharedModel;
+    public static $inject: Array<string> = ["ISharedModel"];
     public tweets: Array<Tweet>;
-    constructor(sharedModel:ISharedModel){
+    private sharedModel: ISharedModel;
+
+    constructor(sharedModel: ISharedModel) {
         this.sharedModel = sharedModel;
         this.tweets = sharedModel.tweets;
     }
-    public toggleCollapsed() {
+
+    public toggleCollapsed(): void {
         this.sharedModel.toggleSidebar();
     }
-    public static $inject = ['ISharedModel'];
 }
