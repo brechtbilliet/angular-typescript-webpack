@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top" ng-if="pageVm.model.isAuthenticated">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -14,6 +14,9 @@
                 <li><a href="#/tweets" title="Tweets">Tweets</a></li>
                 <li><a href="#/about" title="About">About</a></li>
             </ul>
+            <button class="btn navbar-btn" ng-click="pageVm.logout()">
+                Logout
+            </button>
         </div>
     </div>
 </nav>

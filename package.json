@@ -46,13 +46,18 @@
   },
   "dependencies": {
     "angular": "^1.4.3",
+    "angular-formly": "^6.24.23",
+    "angular-formly-templates-bootstrap": "^6.0.0",
     "angular-route": "^1.4.3",
+    "api-check": "^7.5.0",
     "bootstrap": "^3.3.5",
     "font-awesome": "^4.4.0",
     "jquery": "^2.1.4",
     "lodash": "^3.10.1",
     "sinon": "^1.15.4",
     "sinon-es6": "0.0.3",
+    "toaster": "^0.1.2",
+    "toastr": "^2.1.2",
     "ts-loader": "^0.5.0",
     "typemoq": "0.0.6"
   }

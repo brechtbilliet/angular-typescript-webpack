@@ -9,10 +9,10 @@
       "commit": "5109e1269d6ab8e8e73b1a5e85d8ceb836d3099f"
     },
     "angularjs/angular.d.ts": {
-      "commit": "5109e1269d6ab8e8e73b1a5e85d8ceb836d3099f"
+      "commit": "9ce3cd4ded7536d40b8d65264ad729f442f5a052"
     },
     "jquery/jquery.d.ts": {
-      "commit": "5109e1269d6ab8e8e73b1a5e85d8ceb836d3099f"
+      "commit": "9ce3cd4ded7536d40b8d65264ad729f442f5a052"
     },
     "moment/moment.d.ts": {
       "commit": "5109e1269d6ab8e8e73b1a5e85d8ceb836d3099f"
@@ -28,6 +28,12 @@
     },
     "angularjs/angular-mocks.d.ts": {
       "commit": "efa0c1196d7280640e624ac1e7fa604502e7bd63"
+    },
+    "angular-formly/angular-formly.d.ts": {
+      "commit": "9ce3cd4ded7536d40b8d65264ad729f442f5a052"
+    },
+    "toastr/toastr.d.ts": {
+      "commit": "9ce3cd4ded7536d40b8d65264ad729f442f5a052"
     }
   }
 }

@@ -29,6 +29,9 @@ module.exports = function makeWebpackConfig(options) {
                 'app': 'app'
             }
         },
+        resolveLoader: {
+            modulesDirectories: ["node_modules"]
+        },
         module: {
             //postLoaders: [
             //    {
