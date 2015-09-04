@@ -1,6 +1,6 @@
 import {LoginPageController} from "./LoginPageController";
 require("./loginPage.scss");
-export interface IIsolateScope extends ng.IScope {
+export interface ILoginPageIsolateScope extends ng.IScope {
     pageVm: LoginPageController;
 }
 export class LoginPageComponent implements ng.IDirective {

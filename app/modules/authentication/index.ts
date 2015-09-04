@@ -1,5 +1,7 @@
 import "angular";
 import "jquery";
+import "angular-formly";
+import "angular-formly-templates-bootstrap";
 
 import {config as routesConfig} from "./configs/routes";
 import {LoginPageComponent} from "./components/loginPage/LoginPageComponent";
@@ -7,11 +9,13 @@ import {RegisterPageComponent} from "./components/registerPage/RegisterPageCompo
 import {LoginModel} from "./models/LoginModel";
 import {RegisterModel} from "./models/RegisterModel";
 import {AuthenticationService} from "./services/AuthenticationService";
-import "angular-formly";
-import "angular-formly-templates-bootstrap";
 import {IAuthenticationLocationCheckService} from "./services/AuthenticationLocationCheckService";
 import {AuthenticationLocationCheckService} from "./services/AuthenticationLocationCheckService";
 
+if (ON_TEST) {
+    require("./models/spec/Mocks.ts");
+    require("./components/loginPage/LoginPageComponent.spec.ts");
+}
 angular.module("app.authentication", ["formly", "formlyBootstrap", "ngRoute"])
     .directive("loginPage", () => new LoginPageComponent())
     .directive("registerPage", () => new RegisterPageComponent())

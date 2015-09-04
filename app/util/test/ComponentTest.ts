@@ -9,7 +9,7 @@ export class ComponentTest<TComponentScope extends ng.IScope, TAttributes> {
 
     constructor(template: string) {
         this._template = template;
-        angular.mock.inject(($rootScope, $compile) => {
+        angular.mock.inject(($rootScope: ng.IRootScopeService, $compile: ng.ICompileService) => {
             this._$rootScope = $rootScope;
             this._$compile = $compile;
         });

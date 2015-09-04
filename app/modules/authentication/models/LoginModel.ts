@@ -1,13 +1,13 @@
+import "angular-formly";
 import {IAuthenticationService} from "../services/AuthenticationService";
 import {AuthenticationData} from "../entities/AuthenticationData";
-import "angular-formly";
 import {LoginForm} from "../formly/LoginForm";
 import {LoginData} from "../entities/LoginData";
 
 export interface ILoginModel {
     loginData: LoginData;
     formlyModel: AngularFormly.IFieldGroup;
-    login: () => ng.IPromise<AuthenticationData>;
+    login(): ng.IPromise<AuthenticationData>;
 }
 export class LoginModel implements ILoginModel {
     public static $inject: Array<string> = ["IAuthenticationService"];

@@ -7,5 +7,6 @@ export class RegisterPageComponent implements  ng.IDirective{
     public restrict: string = "E";
     public template: string = require("./index.html");
     public controllerAs: string = "pageVm";
+    public bindToController: Boolean = true;
     public controller: Function = RegisterPageController;
 }
