@@ -78,6 +78,12 @@ module.exports = function makeWebpackConfig(options) {
         config.devServer = {
             contentBase: './dev'
         };
+        config.plugins.push(new HtmlWebpackPlugin({
+            template: './app/index.html',
+            inject: 'body',
+            minify: options.BUILD,
+            hash: true
+        }));
     }
     if (options.BUILD) {
         config.plugins.push(new HtmlWebpackPlugin({
