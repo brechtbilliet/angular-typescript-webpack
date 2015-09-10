@@ -4,6 +4,7 @@ var webpack = require('webpack');
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CompressionPlugin = require("compression-webpack-plugin");
+var ClosureCompilerPlugin = require('webpack-closure-compiler');
 
 module.exports = function makeWebpackConfig(options) {
     console.log(options);
@@ -28,7 +29,7 @@ module.exports = function makeWebpackConfig(options) {
 
                 {
                     test: /\.ts$/,
-                    loader: 'ts',
+                    loader: 'ts?optional=runtime&stage=0&cacheDirectory',
                     exclude: /node_modules/
                 },
                 {
@@ -95,6 +96,7 @@ module.exports = function makeWebpackConfig(options) {
         config.plugins.push(new webpack.NoErrorsPlugin(),
             // Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
             // Minify all javascript, switch loaders to minimizing mode
+            new ClosureCompilerPlugin(),
             new webpack.optimize.UglifyJsPlugin({
                 output: {comments: false}
             }),
