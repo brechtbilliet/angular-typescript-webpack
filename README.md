@@ -7,11 +7,13 @@ Unittests will be added in the near future
 ## How to run:
 type npm install
 
+type npm install tsd -g
+
 type tsd install
 
 type npm start
 
-Change package.config for osx
+Change package.json for Windows
 
  "scripts": {
  
