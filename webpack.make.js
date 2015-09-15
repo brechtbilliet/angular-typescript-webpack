@@ -5,6 +5,7 @@ var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CompressionPlugin = require("compression-webpack-plugin");
 var ClosureCompilerPlugin = require('webpack-closure-compiler');
+var argv = require('yargs').argv;
 
 module.exports = function makeWebpackConfig(options) {
     console.log(options);
@@ -125,7 +126,7 @@ module.exports = function makeWebpackConfig(options) {
         ]
     }
     config.plugins.push(new webpack.DefinePlugin({
-        ON_TEST: process.env.NODE_ENV === 'test'
+        ON_TEST: argv.NODE_ENV === 'test'
     }));
     return config;
 };
