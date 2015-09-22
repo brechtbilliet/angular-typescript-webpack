@@ -10,7 +10,7 @@ var argv = require('yargs').argv;
 module.exports = function makeWebpackConfig(options) {
     console.log(options);
     var config = {
-        entry: ['./app/index.ts'],
+        entry: ['./src/index.ts'],
         output: {
             filename: 'build.js',
             path: options.BUILD ? 'dist' : 'dev'
@@ -30,7 +30,7 @@ module.exports = function makeWebpackConfig(options) {
 
                 {
                     test: /\.ts$/,
-                    loader: 'ts?optional=runtime&stage=0&cacheDirectory',
+                    loader: 'ts',
                     exclude: /node_modules/
                 },
                 {
@@ -81,7 +81,7 @@ module.exports = function makeWebpackConfig(options) {
             contentBase: './dev'
         };
         config.plugins.push(new HtmlWebpackPlugin({
-            template: './app/index.html',
+            template: './src/modules/app/index.html',
             inject: 'body',
             minify: options.BUILD,
             hash: true
@@ -89,7 +89,7 @@ module.exports = function makeWebpackConfig(options) {
     }
     if (options.BUILD) {
         config.plugins.push(new HtmlWebpackPlugin({
-            template: './app/index.html',
+            template: './src/modules/app/index.html',
             inject: 'body',
             minify: options.BUILD,
             hash: true
@@ -112,7 +112,7 @@ module.exports = function makeWebpackConfig(options) {
             }));
     }
     if (options.TEST) {
-        config.context = __dirname + '/app';
+        config.context = __dirname + '/src';
         config.entry = './index.ts';
         config.module.postLoaders = [
             {

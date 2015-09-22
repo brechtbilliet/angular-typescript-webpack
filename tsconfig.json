@@ -8,7 +8,7 @@
     "experimentalDecorators": true
   },
   "files": [
-    "app/_all.ts"
+    "src/_all.ts"
   ],
-  "version": "1.5.4"
+  "version": "1.6.2"
 }
