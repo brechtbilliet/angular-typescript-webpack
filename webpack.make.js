@@ -27,12 +27,7 @@ module.exports = function makeWebpackConfig(options) {
         },
         module: {
             loaders: [
-
-                {
-                    test: /\.ts$/,
-                    loader: 'ts',
-                    exclude: /node_modules/
-                },
+                { test: /\.ts(x?)$/, loader: 'babel-loader!ts-loader' },
                 {
                     test: /\.css$/,
                     loader: 'style-loader!css-loader'

@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "noImplicitAny": false,
     "removeComments": true,
     "sourceMap": true,
     "module": "commonjs",
     "experimentalDecorators": true
   },
-  "files": [
-    "src/_all.ts"
+  "exclude": [
+    "node_modules"
   ],
   "version": "1.6.2"
 }

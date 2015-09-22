@@ -2,11 +2,12 @@ import "angular";
 import "jquery";
 import "angular-formly";
 import "angular-formly-templates-bootstrap";
+import * as toastr from "toastr";
 
 import {config as routesConfig} from "./configs/routes";
 import {LoginPageComponent} from "./components/loginPage/LoginPageComponent";
 import {RegisterPageComponent} from "./components/registerPage/RegisterPageComponent";
-import {LoginModel, RegisterModel,AuthenticationService, AuthenticationLocationCheckService, IAuthenticationLocationCheckService}
+import {LoginModel, RegisterModel, AuthenticationService, AuthenticationLocationCheckService, IAuthenticationLocationCheckService}
     from "../core/index";
 
 if (ON_TEST) {

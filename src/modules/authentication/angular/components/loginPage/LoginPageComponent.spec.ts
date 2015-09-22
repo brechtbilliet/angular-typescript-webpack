@@ -1,10 +1,9 @@
 import "angular-mocks";
-import * as toastr from "toastr";
 
 import {ILoginPageIsolateScope} from "./LoginPageComponent";
 import {ComponentTest} from "../../../../util/index";
 import {LoginPageController} from "./LoginPageController";
-import {LoginModelMock} from "../../../../authentication/core/index"
+import {LoginModelMock} from "../../../../authentication/core/index";
 describe("component LoginPageComponent", () => {
     var directiveTest: ComponentTest<ILoginPageIsolateScope, any>;
     var loginModelMock: LoginModelMock;
@@ -54,6 +53,7 @@ describe("component LoginPageComponent", () => {
             it("should show an error toast", () => {
                 vm.login();
                 spyOn(toastr, "error");
+                console.log(toastr);
                 loginModelMock.deferred.login.reject();
                 rootScope.$digest();
                 expect(toastr.error).toHaveBeenCalled();
