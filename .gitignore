@@ -88,4 +88,5 @@ node_modules
 dev/
 reports/
 typings/
-
+src/**/*.js
+src/**/*.js.map
