@@ -1,6 +1,5 @@
 import {RegisterPageController} from "./RegisterPageController";
-require("./registerPage.scss");
-export interface IIsolateScope extends ng.IScope {
+export interface IRegisterPageIsolateScope extends ng.IScope {
     pageVm: RegisterPageController;
 }
 export class RegisterPageComponent implements  ng.IDirective{

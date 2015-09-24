@@ -1,9 +1,10 @@
+import "../../index";
+import "angular";
 import "angular-mocks";
 import {ComponentTest} from "../../../../util/index";
 import {ITweetContentIsolateScope} from "./TweetContentComponent";
 import {IRootModel, RootModelMock} from "../../../core/index";
 import {TweetContentController} from "./TweetContentController";
-
 
 describe("Component TweetContentComponent", () => {
     var directiveTest: ComponentTest<ITweetContentIsolateScope, any>;

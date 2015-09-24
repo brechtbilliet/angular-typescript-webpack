@@ -10,4 +10,4 @@ export * from "./models/TopbarModel";
 export * from "./services/Interfaces";
 export * from "./services/TweetService";
 
-export * from "./models/spec/Mocks"
+export * from "./models/spec/Mocks";

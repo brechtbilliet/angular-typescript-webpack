@@ -1,4 +1,6 @@
+import "angular";
 import "angular-mocks";
+import "../../index";
 import {IStarIsolateScope, IComponentAttributes} from "./StarComponent";
 import {ComponentTest} from "../../../../util/index";
 import {StarController} from "./StarController";

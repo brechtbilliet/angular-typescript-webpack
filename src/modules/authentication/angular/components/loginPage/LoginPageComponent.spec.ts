@@ -1,4 +1,8 @@
+import "angular";
 import "angular-mocks";
+import "angular-route";
+import * as toastr from "toastr";
+import "../../index";
 
 import {ILoginPageIsolateScope} from "./LoginPageComponent";
 import {ComponentTest} from "../../../../util/index";
@@ -36,14 +40,14 @@ describe("component LoginPageComponent", () => {
         describe("given the login call was successfull", () => {
             it("should show a successtoast", () => {
                 vm.login();
-                spyOn(toastr, "success");
+                spyOn(toastr, "success").and.callThrough();
                 loginModelMock.deferred.login.resolve();
                 rootScope.$digest();
                 expect(toastr.success).toHaveBeenCalled();
             });
             it("should redirect to the basepath", () => {
                 vm.login();
-                spyOn(location, "path");
+                spyOn(location, "path").and.callThrough();
                 loginModelMock.deferred.login.resolve();
                 rootScope.$digest();
                 expect(location.path).toHaveBeenCalledWith("/");
@@ -52,8 +56,7 @@ describe("component LoginPageComponent", () => {
         describe("given the login was unsuccessfull", () => {
             it("should show an error toast", () => {
                 vm.login();
-                spyOn(toastr, "error");
-                console.log(toastr);
+                spyOn(toastr, "error").and.callThrough();
                 loginModelMock.deferred.login.reject();
                 rootScope.$digest();
                 expect(toastr.error).toHaveBeenCalled();

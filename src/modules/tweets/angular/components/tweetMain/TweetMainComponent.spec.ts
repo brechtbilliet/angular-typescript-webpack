@@ -1,4 +1,6 @@
+import "angular";
 import "angular-mocks";
+import "../../index";
 import {ITweetMainIsolateScope} from "./TweetMainComponent";
 import {ComponentTest} from "../../../../util/index";
 import {IRootModel, RootModelMock} from "../../../core/index";

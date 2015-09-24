@@ -1,4 +1,5 @@
 import {ILoginModel} from "../../../core/index";
+import * as toastr from "toastr";
 export class LoginPageController {
     public static $inject: Array<string> = ["ILoginModel", "$location"];
     public model: ILoginModel;
