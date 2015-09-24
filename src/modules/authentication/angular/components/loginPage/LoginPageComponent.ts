@@ -1,5 +1,4 @@
 import {LoginPageController} from "./LoginPageController";
-require("./loginPage.scss");
 export interface ILoginPageIsolateScope extends ng.IScope {
     pageVm: LoginPageController;
 }

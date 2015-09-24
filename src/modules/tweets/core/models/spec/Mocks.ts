@@ -1,4 +1,4 @@
-import {IRootModel, ISharedModel, ISidebarModel, ITopbarModel, IContentModel} from "./../Interfaces";
+import {IRootModel, ISharedModel, ISidebarModel, ITopbarModel, IContentModel} from "../Interfaces";
 import {Tweet} from "../../entities/Tweet";
 import "angular";
 export class RootModelMock implements IRootModel {

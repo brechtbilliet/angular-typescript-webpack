@@ -1,1 +1,1 @@
-import "./modules/app/index"
+import "./modules/app/index";

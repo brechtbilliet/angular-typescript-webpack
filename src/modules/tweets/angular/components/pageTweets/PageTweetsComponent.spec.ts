@@ -1,3 +1,5 @@
+import "../../index";
+import "angular";
 import "angular-mocks";
 import {ComponentTest} from "../../../../util/index";
 import {IPageTweetsIsolateScope} from "./PageTweetsComponent";

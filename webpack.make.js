@@ -27,7 +27,7 @@ module.exports = function makeWebpackConfig(options) {
         },
         module: {
             loaders: [
-                { test: /\.ts(x?)$/, loader: 'babel-loader!ts-loader' },
+                {test: /\.ts(x?)$/, loader: 'babel-loader!ts-loader'},
                 {
                     test: /\.css$/,
                     loader: 'style-loader!css-loader'
@@ -121,7 +121,7 @@ module.exports = function makeWebpackConfig(options) {
         ]
     }
     config.plugins.push(new webpack.DefinePlugin({
-        ON_TEST: argv.NODE_ENV === 'test'
+        ON_TEST: (argv.NODE_ENV === 'test' || process.env.NODE_ENV === 'test' )
     }));
     return config;
 };
