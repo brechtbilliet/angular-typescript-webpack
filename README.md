@@ -5,10 +5,6 @@ This is Brecht Billiet his architecture to combine typescript, webpack and angul
 Unittests will be added in the near future
 
 ## How to run:
-type npm install
-
-type npm install tsd -g
-
-type tsd install
+install node and typescript 
 
 type npm start
