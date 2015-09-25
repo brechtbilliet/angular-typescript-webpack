@@ -38,12 +38,14 @@ module.exports = function () {
             {pattern: 'src/**/*.ts', load: false},
             {pattern: 'src/**/*.spec.ts', ignore: true},
             {pattern: 'src/**/*.spec.js', ignore: true},
-            {pattern: 'src/**/*.js', load: false}
+            {pattern: 'src/**/*.js', load: false},
+            {pattern: 'node_modules/**/*.js', ignore: true}
         ],
 
         tests: [
             {pattern: 'src/**/*.spec.ts', load: false},
-            {pattern: 'src/**/*.spec.js', load: false}
+            {pattern: 'src/**/*.spec.js', load: false},
+            {pattern: 'node_modules/**/*.js', ignore: true}
         ],
 
         preprocessors: {
