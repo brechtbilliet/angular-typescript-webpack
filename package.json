@@ -4,7 +4,7 @@
   "description": "",
   "main": "/",
   "scripts": {
-    "build": "tsd install && npm install && webpack --config webpack.build.js --bail -p --color --NODE_ENV=dev",
+    "build": "tsd install && npm install && webpack --config webpack.build.js --bail --color --NODE_ENV=dev",
     "start": "tsd install && npm install && webpack --config webpack.dev.js --watch --NODE_ENV=dev",
     "test": "karma start --NODE_ENV=test",
     "test:live": "karma start --auto-watch --no-single-run --NODE_ENV=dev"
@@ -47,7 +47,6 @@
     "url-loader": "^0.5.6",
     "wallaby-webpack": "0.0.7",
     "webpack": "^1.11.0",
-    "webpack-closure-compiler": "^1.0.0",
     "webpack-dev-server": "^1.10.1",
     "yargs": "^3.25.0"
   },

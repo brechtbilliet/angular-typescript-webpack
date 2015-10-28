@@ -78,7 +78,6 @@ module.exports = function makeWebpackConfig(options) {
         config.plugins.push(new HtmlWebpackPlugin({
             template: './src/modules/app/index.html',
             inject: 'body',
-            minify: options.BUILD,
             hash: true
         }));
     }
@@ -86,16 +85,11 @@ module.exports = function makeWebpackConfig(options) {
         config.plugins.push(new HtmlWebpackPlugin({
             template: './src/modules/app/index.html',
             inject: 'body',
-            minify: options.BUILD,
             hash: true
         }));
         config.plugins.push(new webpack.NoErrorsPlugin(),
             // Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
             // Minify all javascript, switch loaders to minimizing mode
-            new ClosureCompilerPlugin(),
-            new webpack.optimize.UglifyJsPlugin({
-                output: {comments: false}
-            }),
             new webpack.optimize.DedupePlugin(),
             new webpack.optimize.OccurenceOrderPlugin(true),
             new CompressionPlugin({

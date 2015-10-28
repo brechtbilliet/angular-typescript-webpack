@@ -8,7 +8,10 @@
     "experimentalDecorators": true
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist",
+    "dev",
+    "reports"
   ],
   "version": "1.6.2"
 }
