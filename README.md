@@ -7,10 +7,10 @@ And this all with sourcemaps in production support!!
 
 ```sh
 npm i webpack tsd typescript -g
-npm install
-tsd install
 git clone git@github.com/brechtbilliet/angular-typescript-webpack.git
 cd angular-typescript-webpack
+npm install
+tsd install
 npm start
 ```
 
