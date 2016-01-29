@@ -1,23 +1,23 @@
 import "angular";
 import "angular-mocks";
 import "../../index";
-import {ITweetMainIsolateScope} from "./TweetMainComponent";
-import {ComponentTest} from "../../../../util/index";
-import {IRootModel, RootModelMock} from "../../../core/index";
 import {TweetMainController} from "./TweetMainController";
+import {ComponentTest} from "../../../../util/ComponentTest";
+import {ISharedModel} from "../../../core/models/int/ISharedModel";
 
 describe("Component TweetSidebarComponent", () => {
-    var directiveTest: ComponentTest<ITweetMainIsolateScope , any>;
-    var rootModelMock: IRootModel = new RootModelMock();
+    var directiveTest: ComponentTest<TweetMainController >;
+    var sharedModelMock: ISharedModel;
     beforeEach(angular.mock.module("app.tweets", ($provide: any) => {
-        $provide.service("IRootModel", () =>  rootModelMock);
+        sharedModelMock = <ISharedModel>{};
+        $provide.service("ISharedModel", () =>  sharedModelMock);
     }));
     beforeEach(() => {
-        directiveTest = new ComponentTest<ITweetMainIsolateScope , Object>("<tweet-main></tweet-main>");
+        directiveTest = new ComponentTest<TweetMainController>("<tweet-main></tweet-main>", "tweetMain");
     });
 
     it("should expose the sharedModel", () => {
-        var vm: TweetMainController = directiveTest.createComponent({}).mainVm;
-        expect(vm.sharedModel).toBe(rootModelMock.sharedModel);
+        var vm: TweetMainController = directiveTest.createComponent({});
+        expect(vm.sharedModel).toBe(sharedModelMock);
     });
 });

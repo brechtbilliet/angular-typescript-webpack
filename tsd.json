@@ -6,34 +6,25 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "angularjs/angular-route.d.ts": {
-      "commit": "5109e1269d6ab8e8e73b1a5e85d8ceb836d3099f"
+      "commit": "5ea7d92bb39c7a26f49dc3de2c566d5ae325e19e"
     },
     "angularjs/angular.d.ts": {
-      "commit": "9ce3cd4ded7536d40b8d65264ad729f442f5a052"
+      "commit": "5ea7d92bb39c7a26f49dc3de2c566d5ae325e19e"
+    },
+    "bootstrap/bootstrap.d.ts": {
+      "commit": "5ea7d92bb39c7a26f49dc3de2c566d5ae325e19e"
     },
     "jquery/jquery.d.ts": {
-      "commit": "9ce3cd4ded7536d40b8d65264ad729f442f5a052"
-    },
-    "moment/moment.d.ts": {
-      "commit": "5109e1269d6ab8e8e73b1a5e85d8ceb836d3099f"
-    },
-    "moment/moment-node.d.ts": {
-      "commit": "5109e1269d6ab8e8e73b1a5e85d8ceb836d3099f"
+      "commit": "5ea7d92bb39c7a26f49dc3de2c566d5ae325e19e"
     },
     "lodash/lodash.d.ts": {
-      "commit": "5109e1269d6ab8e8e73b1a5e85d8ceb836d3099f"
+      "commit": "5ea7d92bb39c7a26f49dc3de2c566d5ae325e19e"
     },
-    "jasmine/jasmine.d.ts": {
-      "commit": "5109e1269d6ab8e8e73b1a5e85d8ceb836d3099f"
+    "source-map/source-map.d.ts": {
+      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
     },
-    "angularjs/angular-mocks.d.ts": {
-      "commit": "efa0c1196d7280640e624ac1e7fa604502e7bd63"
-    },
-    "angular-formly/angular-formly.d.ts": {
-      "commit": "9ce3cd4ded7536d40b8d65264ad729f442f5a052"
-    },
-    "toastr/toastr.d.ts": {
-      "commit": "9ce3cd4ded7536d40b8d65264ad729f442f5a052"
+    "uglify-js/uglify-js.d.ts": {
+      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
     }
   }
 }

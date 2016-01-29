@@ -1,7 +1,4 @@
 import {PageTweetsController} from "./PageTweetsController";
-export interface IPageTweetsIsolateScope extends ng.IScope {
-    pageVm: PageTweetsController;
-}
 export class PageTweetsComponent implements ng.IDirective{
     public restrict: string = "E";
     public controllerAs: string = "pageVm";

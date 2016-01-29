@@ -1,7 +1,4 @@
 import {TweetSidebarController} from "./TweetSidebarController";
-export interface ITweetSidebarIsolateScope extends ng.IScope{
-    sidebarVm: TweetSidebarController;
-}
 export class TweetSidebarComponent {
     public restrict: string = "E";
     public controllerAs: string = "sidebarVm";

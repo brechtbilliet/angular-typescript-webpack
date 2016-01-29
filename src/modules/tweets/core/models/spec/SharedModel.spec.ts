@@ -1,14 +1,17 @@
-import {ISharedModel} from "./../Interfaces";
-import {ITweetService} from "../../services/Interfaces";
-import {SharedModel} from "./../SharedModel";
-import {TweetServiceMock} from "../../services/Mocks";
+import {ITweetService} from "../../services/int/ITweetService";
+import {ISharedModel} from "../int/ISharedModel";
+import {SharedModel} from "../impl/SharedModel";
+import {Tweet} from "../../entities/Tweet";
+import Spy = jasmine.Spy;
 describe("model: SharedModel", () => {
     var tweetServiceMock: ITweetService;
     var sharedModel: ISharedModel;
+    var getAllResult: Array<Tweet> = [new Tweet("@test", "test", false)];
     beforeEach(() => {
-        tweetServiceMock = new TweetServiceMock();
+        tweetServiceMock = jasmine.createSpyObj("TweetService", ["getAll"]);
+        (<Spy>tweetServiceMock.getAll).and.returnValue(getAllResult);
         sharedModel = new SharedModel(tweetServiceMock);
-    })
+    });
     describe("on initialization", () => {
         it("should set the topbarCollapsed property to false by default", () => {
             expect(sharedModel.topbarCollapsed).toBe(false);
@@ -16,6 +19,9 @@ describe("model: SharedModel", () => {
 
         it("should set the sidebarCollapsed property to false by default", () => {
             expect(sharedModel.sidebarCollapsed).toBe(false);
+        });
+        it("should get the tweets from the service", () => {
+            expect(sharedModel.tweets).toBe(getAllResult);
         });
     });
     describe("When toggleTopbar()", () => {

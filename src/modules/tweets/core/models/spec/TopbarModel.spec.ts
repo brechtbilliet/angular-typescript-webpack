@@ -1,16 +1,18 @@
-import {ITopbarModel, ISharedModel} from "./../Interfaces";
-import {TopbarModel} from "./../TopbarModel";
-import {SharedModelMock} from "./Mocks";
+import {ISharedModel} from "../int/ISharedModel";
+import {ITopbarModel} from "../int/ITopbarModel";
+import {TopbarModel} from "../impl/TopbarModel";
 describe("Model: TopbarModel", () => {
     var sharedModelMock: ISharedModel;
     var topbarModel: ITopbarModel;
     beforeEach(() => {
-        sharedModelMock = new SharedModelMock();
+        sharedModelMock = jasmine.createSpyObj("sharedModel", ["toggleTopbar", "toggleSidebar"]);
+        sharedModelMock.tweets = [];
+        sharedModelMock.sidebarCollapsed = false;
+        sharedModelMock.topbarCollapsed = false;
         topbarModel = new TopbarModel(sharedModelMock);
     });
     describe("on toggleCollapsed()", () => {
         it("should collapse the topbar", () => {
-            spyOn(sharedModelMock, "toggleTopbar");
             topbarModel.toggleCollapsed();
             expect(sharedModelMock.toggleTopbar).toHaveBeenCalled();
         });

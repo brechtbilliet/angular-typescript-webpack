@@ -1,15 +1,9 @@
-import {ISidebarModel, ISharedModel, IRootModel} from "../../../core/index";
-
+import {ISidebarModel} from "../../../core/models/int/ISidebarModel";
+import {ISharedModel} from "../../../core/models/int/ISharedModel";
 export class TweetSidebarController {
-    public static $inject: Array<string> = ["IRootModel"];
-    public model: ISidebarModel;
-    public sharedModel: ISharedModel;
-    private _rootModel: IRootModel;
+    public static $inject: Array<string> = ["ISidebarModel", "ISharedModel"];
 
-    constructor(rootModel: IRootModel) {
-        this._rootModel = rootModel;
-        this.sharedModel = this._rootModel.sharedModel;
-        this.model = this._rootModel.sidebarModel;
+    constructor(public model: ISidebarModel, public sharedModel: ISharedModel) {
     }
     public toggleCollapsed(): void {
         this.model.toggleCollapsed();

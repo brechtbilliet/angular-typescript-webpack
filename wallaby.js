@@ -1,4 +1,4 @@
-var babel = require('babel');
+var babel = require('babel-core');
 var wallabyWebpack = require('wallaby-webpack');
 var webpack = require('webpack');
 
@@ -19,17 +19,10 @@ var webpackPostprocessor = wallabyWebpack({
                 loader: 'style!css!sass'
             }
         ]
-    },
-    plugins: [
-        new webpack.DefinePlugin({
-            ON_TEST: false
-        })
-    ]
-
+    }
 });
 
 module.exports = function () {
-
     return {
         files: [
             {pattern: 'src/**/*.html', load: false},
@@ -37,14 +30,11 @@ module.exports = function () {
             {pattern: 'src/**/*.css', load: false},
             {pattern: 'src/**/*.ts', load: false},
             {pattern: 'src/**/*.spec.ts', ignore: true},
-            {pattern: 'src/**/*.spec.js', ignore: true},
-            {pattern: 'src/**/*.js', load: false},
             {pattern: 'node_modules/**/*.js', ignore: true}
         ],
 
         tests: [
             {pattern: 'src/**/*.spec.ts', load: false},
-            {pattern: 'src/**/*.spec.js', load: false},
             {pattern: 'node_modules/**/*.js', ignore: true}
         ],
 
@@ -53,7 +43,6 @@ module.exports = function () {
         },
         "testFramework": "jasmine",
         postprocessor: webpackPostprocessor,
-
         bootstrap: function () {
             window.__moduleBundler.loadTests();
         }

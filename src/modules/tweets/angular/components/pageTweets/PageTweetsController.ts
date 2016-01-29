@@ -1,13 +1,6 @@
-import {ISharedModel, IRootModel} from "../../../core/index";
-
+import {ISharedModel} from "../../../core/models/int/ISharedModel";
 export class PageTweetsController {
-    public static $inject: Array<string> = ["IRootModel"];
-    public sharedModel: ISharedModel;
-
-    private _rootModel: IRootModel;
-
-    constructor(rootModel: IRootModel) {
-        this._rootModel = rootModel;
-        this.sharedModel = this._rootModel.sharedModel;
+    public static $inject: Array<string> = ["ISharedModel"];
+    constructor(public sharedModel: ISharedModel) {
     }
 }

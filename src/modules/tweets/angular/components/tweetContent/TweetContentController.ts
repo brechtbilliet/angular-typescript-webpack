@@ -1,13 +1,7 @@
-import {IContentModel, IRootModel} from "../../../core/index";
-
+import {IContentModel} from "../../../core/models/int/IContentModel";
 export class TweetContentController {
-    public static $inject: Array<string> = ["IRootModel"];
-    public model: IContentModel;
+    public static $inject: Array<string> = ["IContentModel"];
 
-    private _rootModel: IRootModel;
-
-    constructor(rootModel: IRootModel) {
-        this._rootModel = rootModel;
-        this.model = this._rootModel.contentModel;
+    constructor(public model: IContentModel) {
     }
 }

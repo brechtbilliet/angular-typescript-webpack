@@ -1,31 +1,23 @@
-export class ComponentTest<TComponentScope extends ng.IScope, TAttributes> {
-    public scope: TComponentScope;
+export class ComponentTest<TController> {
     public element: ng.IAugmentedJQuery;
-    public isolateScope: TComponentScope;
+    public scope: ng.IScope;
+    private rootScope: ng.IScope;
+    private compile: ng.ICompileService;
 
-    private _template: string;
-    private _$rootScope: ng.IScope;
-    private _$compile: ng.ICompileService;
-
-    constructor(template: string) {
-        this._template = template;
+    constructor(private template: string, private registerName: string) {
         angular.mock.inject(($rootScope: ng.IRootScopeService, $compile: ng.ICompileService) => {
-            this._$rootScope = $rootScope;
-            this._$compile = $compile;
+            this.rootScope = $rootScope;
+            this.compile = $compile;
         });
     }
 
-    public createComponent(attributes: TAttributes): TComponentScope {
-        this.scope = <TComponentScope>this._$rootScope.$new();
+    public createComponent(attributes: any): TController {
+        this.scope = this.rootScope.$new();
         for (var key in attributes) {
             this.scope[key] = attributes[key];
         }
-        this.element = this._$compile(this._template)(this.scope);
+        this.element = this.compile(this.template)(this.scope);
         this.scope.$digest();
-        this.isolateScope = <TComponentScope>this.element.isolateScope();
-        if (this.isolateScope != null) {
-            return this.isolateScope;
-        }
-        return this.scope;
+        return this.element.controller(this.registerName);
     }
 }

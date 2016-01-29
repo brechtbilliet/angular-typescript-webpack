@@ -1,34 +1,37 @@
 import "angular";
 import "angular-mocks";
 import "../../index";
-import {ITweetSidebarIsolateScope} from "./TweetSidebarComponent";
-import {ComponentTest} from "../../../../util/index";
-import {IRootModel, RootModelMock} from "../../../core/index";
 import {TweetSidebarController} from "./TweetSidebarController";
+import {ComponentTest} from "../../../../util/ComponentTest";
+import {ISidebarModel} from "../../../core/models/int/ISidebarModel";
+import {ISharedModel} from "../../../core/models/int/ISharedModel";
 
 describe("Component TweetSidebarComponent", () => {
-    var directiveTest: ComponentTest<ITweetSidebarIsolateScope, any>;
-    var rootModelMock: IRootModel = new RootModelMock();
+    var directiveTest: ComponentTest<TweetSidebarController>;
+    var sharedModelMock: ISharedModel;
+    var sidebarModelMock: ISidebarModel;
     beforeEach(angular.mock.module("app.tweets", ($provide: any) => {
-        $provide.service("IRootModel", () =>  rootModelMock);
+        sidebarModelMock = <ISidebarModel>jasmine.createSpyObj("sidebarModel", ["toggleCollapsed"]);
+        sharedModelMock = <ISharedModel>jasmine.createSpyObj("sharedModel", ["toggletopbar", "toggleSidebar"]);
+        $provide.service("ISharedModel", () =>  sharedModelMock);
+        $provide.service("ISidebarModel", () =>  sidebarModelMock);
     }));
     beforeEach(() => {
-        directiveTest = new ComponentTest<ITweetSidebarIsolateScope, Object>("<tweet-sidebar></tweet-sidebar>");
+        directiveTest = new ComponentTest<TweetSidebarController>("<tweet-sidebar></tweet-sidebar>", "tweetSidebar");
     });
 
     it("should expose the sharedModel", () => {
-        var vm: TweetSidebarController = directiveTest.createComponent({}).sidebarVm;
-        expect(vm.sharedModel).toBe(rootModelMock.sharedModel);
+        var vm: TweetSidebarController = directiveTest.createComponent({});
+        expect(vm.sharedModel).toBe(sharedModelMock);
     });
     it("should expose the sidebarModel", () => {
-        var vm: TweetSidebarController = directiveTest.createComponent({}).sidebarVm;
-        expect(vm.model).toEqual(rootModelMock.sidebarModel);
+        var vm: TweetSidebarController = directiveTest.createComponent({});
+        expect(vm.model).toEqual(sidebarModelMock);
     });
 
     describe("on toggleCollapsed()", () => {
         it("should collapse the sidebar", () => {
-            var vm: TweetSidebarController = directiveTest.createComponent({}).sidebarVm;
-            spyOn(rootModelMock.sidebarModel, "toggleCollapsed");
+            var vm: TweetSidebarController = directiveTest.createComponent({});
             vm.toggleCollapsed();
             expect(vm.model.toggleCollapsed).toHaveBeenCalled();
         });
