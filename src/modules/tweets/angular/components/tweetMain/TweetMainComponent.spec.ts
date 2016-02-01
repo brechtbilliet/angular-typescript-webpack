@@ -1,9 +1,10 @@
 import "angular";
 import "angular-mocks";
 import "../../index";
-import {TweetMainController} from "./TweetMainController";
 import {ComponentTest} from "../../../../util/ComponentTest";
 import {ISharedModel} from "../../../core/models/int/ISharedModel";
+import 'phantomjs-polyfill';
+import {TweetMainController} from "./TweetMainComponent";
 
 describe("Component TweetSidebarComponent", () => {
     var directiveTest: ComponentTest<TweetMainController >;

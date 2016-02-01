@@ -1,6 +1,6 @@
 {
   "name": "angular-typescript-webpack",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A seed project for a largescale angular architecture in webpack and typescript",
   "main": "/",
   "scripts": {
@@ -11,15 +11,15 @@
   "author": "Brecht Billiet <billietbrecht@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "angular": "1.4.9",
-    "angular-route": "1.4.9",
+    "angular": "1.5.0-rc.2",
+    "angular-route": "1.5.0-rc.2",
     "bootstrap": "3.3.6",
     "font-awesome": "4.5.0",
     "jquery": "2.2.0",
     "lodash": "4.0.1"
   },
   "devDependencies": {
-    "angular-mocks": "1.4.9",
+    "angular-mocks": "1.5.0-rc.2",
     "angular-module-mocks": "1.2.19",
     "babel-core": "6.4.5",
     "babel-istanbul": "0.6.0",

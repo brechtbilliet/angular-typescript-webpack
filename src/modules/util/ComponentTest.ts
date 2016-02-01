@@ -1,3 +1,5 @@
+import IRootScopeService = angular.IRootScopeService;
+import ICompileService = angular.ICompileService;
 export class ComponentTest<TController> {
     public element: ng.IAugmentedJQuery;
     public scope: ng.IScope;
@@ -5,7 +7,7 @@ export class ComponentTest<TController> {
     private compile: ng.ICompileService;
 
     constructor(private template: string, private registerName: string) {
-        angular.mock.inject(($rootScope: ng.IRootScopeService, $compile: ng.ICompileService) => {
+        angular.mock.inject(($rootScope: IRootScopeService, $compile: ICompileService) => {
             this.rootScope = $rootScope;
             this.compile = $compile;
         });

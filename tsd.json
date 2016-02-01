@@ -5,17 +5,11 @@
   "path": "typings",
   "bundle": "typings/tsd.d.ts",
   "installed": {
-    "angularjs/angular-route.d.ts": {
-      "commit": "5ea7d92bb39c7a26f49dc3de2c566d5ae325e19e"
-    },
-    "angularjs/angular.d.ts": {
-      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
-    },
     "bootstrap/bootstrap.d.ts": {
       "commit": "5ea7d92bb39c7a26f49dc3de2c566d5ae325e19e"
     },
     "jquery/jquery.d.ts": {
-      "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
+      "commit": "717a5fdb079f8dd7c19f1b22f7f656dd990f0ccf"
     },
     "lodash/lodash.d.ts": {
       "commit": "5ea7d92bb39c7a26f49dc3de2c566d5ae325e19e"
@@ -31,6 +25,12 @@
     },
     "jasmine/jasmine.d.ts": {
       "commit": "5d0f2126c8dac8fce0ff020218aea06607213b0d"
+    },
+    "angularjs/angular.d.ts": {
+      "commit": "717a5fdb079f8dd7c19f1b22f7f656dd990f0ccf"
+    },
+    "angularjs/angular-route.d.ts": {
+      "commit": "717a5fdb079f8dd7c19f1b22f7f656dd990f0ccf"
     }
   }
 }

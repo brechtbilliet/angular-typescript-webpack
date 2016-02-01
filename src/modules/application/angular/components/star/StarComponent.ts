@@ -1,13 +1,17 @@
-import {StarController} from "./StarController";
-
-export class StarComponent implements ng.IDirective {
-    public restrict: string = "E";
-    public controllerAs: string = "starVm";
-    public bindToController: boolean = true;
-    public scope: any = {
+export class StarComponent implements ng.IComponentOptions {
+    public bindings: any = {
         starred: "="
-    }
-    public template: string = require("./index.html");
+    };
     public controller: Function = StarController;
+    public template: string =
+        `<i class="fa fa-star fa-2x"
+            ng-class="{'starred': $ctrl.starred}"
+            ng-click="$ctrl.toggle()"></i>`;
 }
-export default StarComponent;
+export class StarController {
+    public starred: boolean;
+
+    public toggle(): void {
+        this.starred = !this.starred;
+    }
+}

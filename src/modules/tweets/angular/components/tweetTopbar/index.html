@@ -1,8 +1,0 @@
-<div>
-    <div class="collapsed-content" ng-if="!topbarVm.sharedModel.topbarCollapsed">
-        <h1><i class="fa fa-twitter"></i>&nbsp;Post a new tweet</h1>
-        <textarea class="form-control" ng-model="topbarVm.model.tweetContent"></textarea><br/>
-        <button ng-disabled="topbarVm.model.tweetContent === ''" ng-click="topbarVm.post()" class="btn btn-primary btn-lg"><i class="fa fa-envelope"></i>&nbsp;Post</button>
-    </div>
-    <i ng-click="topbarVm.toggleCollapsed()" class="fa fa-chevron-up dp-collapse dp-collapse-center" ng-class="{'fa-chevron-up': !topbarVm.sharedModel.topbarCollapsed, 'fa-chevron-down': topbarVm.sharedModel.topbarCollapsed}"></i>
-</div>

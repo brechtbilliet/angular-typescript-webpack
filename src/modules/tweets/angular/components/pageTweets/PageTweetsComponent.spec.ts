@@ -1,10 +1,10 @@
 import "../../index";
 import "angular";
 import "angular-mocks";
-import {PageTweetsController} from "./PageTweetsController";
 import {ComponentTest} from "../../../../util/ComponentTest";
 import {ISharedModel} from "../../../core/models/int/ISharedModel";
-
+import 'phantomjs-polyfill';
+import {PageTweetsController} from "./PageTweetsComponent";
 describe("Component PageTweetsComponent", () => {
     var directiveTest: ComponentTest<PageTweetsController>;
     var sharedModelMock: ISharedModel;
