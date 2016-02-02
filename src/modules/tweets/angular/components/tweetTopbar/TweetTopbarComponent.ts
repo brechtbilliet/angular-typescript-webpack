@@ -1,6 +1,7 @@
 import {ITopbarModel} from "../../../core/models/int/ITopbarModel";
 import {ISharedModel} from "../../../core/models/int/ISharedModel";
 export class TweetTopbarComponent implements ng.IComponentOptions{
+    public controller: Function = TweetTopbarController;
     public template: string = `
         <div>
             <div class="collapsed-content" ng-if="!$ctrl.sharedModel.topbarCollapsed">
@@ -17,7 +18,6 @@ export class TweetTopbarComponent implements ng.IComponentOptions{
                 ng-class="{'fa-chevron-up': !$ctrl.sharedModel.topbarCollapsed, 'fa-chevron-down': $ctrl.sharedModel.topbarCollapsed}"></i>
         </div>
     `;
-    public controller: Function = TweetTopbarController;
 }
 export class TweetTopbarController {
     public static $inject: Array<string> = ["ISharedModel", "ITopbarModel"];

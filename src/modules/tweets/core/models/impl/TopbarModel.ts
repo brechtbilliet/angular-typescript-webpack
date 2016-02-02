@@ -16,7 +16,7 @@ export class TopbarModel implements ITopbarModel {
     }
 
     public addTweet(): void {
-        this.sharedModel.tweets.push(Tweet.createInstance("@brecht", this.tweetContent, false));
+        this.sharedModel.tweets.push(new Tweet("@brecht", this.tweetContent, false));
         this.tweetContent = "";
     }
 }
