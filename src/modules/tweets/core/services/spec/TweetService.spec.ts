@@ -1,9 +1,8 @@
-import {ITweetService} from "../int/ITweetService";
 import {TweetService} from "../impl/TweetService";
 import {Tweet} from "../../entities/Tweet";
 import * as _ from "lodash";
 describe("Service: TweetService", () => {
-    var tweetService: ITweetService;
+    var tweetService: TweetService;
     beforeEach(() => {
         tweetService = new TweetService();
     });

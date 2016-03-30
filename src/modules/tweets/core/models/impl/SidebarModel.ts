@@ -1,13 +1,10 @@
-import {ISidebarModel} from "../int/ISidebarModel";
 import {Tweet} from "../../entities/Tweet";
-import {ISharedModel} from "../int/ISharedModel";
-export class SidebarModel implements ISidebarModel {
-    public static $inject: Array<string> = ["ISharedModel"];
+import {SharedModel} from './SharedModel';
+export class SidebarModel {
+    public static $inject: Array<string> = ["SharedModel"];
     public tweets: Array<Tweet>;
-    private sharedModel: ISharedModel;
 
-    constructor(sharedModel: ISharedModel) {
-        this.sharedModel = sharedModel;
+    constructor(private sharedModel: SharedModel) {
         this.tweets = sharedModel.tweets;
     }
 

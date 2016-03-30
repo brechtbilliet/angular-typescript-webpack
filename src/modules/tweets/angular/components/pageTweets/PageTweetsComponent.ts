@@ -1,4 +1,4 @@
-import {ISharedModel} from "../../../core/models/int/ISharedModel";
+import {SharedModel} from '../../../core/models/impl/SharedModel';
 export class PageTweetsComponent implements ng.IComponentOptions{
     public controller: Function = PageTweetsController;
     public template: string = `
@@ -7,7 +7,7 @@ export class PageTweetsComponent implements ng.IComponentOptions{
     `
 }
 export class PageTweetsController {
-    public static $inject: Array<string> = ["ISharedModel"];
-    constructor(public sharedModel: ISharedModel) {
+    public static $inject: Array<string> = ["SharedModel"];
+    constructor(public sharedModel: SharedModel) {
     }
 }

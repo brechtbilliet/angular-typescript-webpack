@@ -2,16 +2,16 @@ import "../../index";
 import "angular";
 import "angular-mocks";
 import {ComponentTest} from "../../../../util/ComponentTest";
-import {IContentModel} from "../../../core/models/int/IContentModel";
 import 'phantomjs-polyfill';
 import {TweetContentController} from "./TweetContentComponent";
+import {ContentModel} from '../../../core/models/impl/ContentModel';
 
 describe("Component TweetContentComponent", () => {
     var directiveTest: ComponentTest<TweetContentController>;
-    var contentModelMock: IContentModel;
+    var contentModelMock: ContentModel;
     beforeEach(angular.mock.module("app.tweets", ($provide: any) => {
-        contentModelMock = <IContentModel>{};
-        $provide.service("IContentModel", () =>  contentModelMock);
+        contentModelMock = <ContentModel>{};
+        $provide.service("ContentModel", () =>  contentModelMock);
     }));
     beforeEach(() => {
         directiveTest = new ComponentTest<TweetContentController>("<tweet-content></tweet-content>", "tweetContent");

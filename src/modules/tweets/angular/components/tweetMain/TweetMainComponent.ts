@@ -1,5 +1,5 @@
-import {ISharedModel} from "../../../core/models/int/ISharedModel";
-export class TweetMainComponent implements ng.IDirective{
+import {SharedModel} from '../../../core/models/impl/SharedModel';
+export class TweetMainComponent implements ng.IComponentOptions{
     public controller: Function = TweetMainController;
     public template: string = `
         <tweet-topbar ng-class="{'topbar-collapsed': $ctrl.sharedModel.topbarCollapsed}"></tweet-topbar>
@@ -7,7 +7,7 @@ export class TweetMainComponent implements ng.IDirective{
     `;
 }
 export class TweetMainController {
-    public static $inject: Array<string> = ["ISharedModel"];
-    constructor(public sharedModel: ISharedModel) {
+    public static $inject: Array<string> = ["SharedModel"];
+    constructor(public sharedModel: SharedModel) {
     }
 }

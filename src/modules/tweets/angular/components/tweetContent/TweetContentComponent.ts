@@ -1,5 +1,5 @@
-import {IContentModel} from "../../../core/models/int/IContentModel";
-export class TweetContentComponent implements ng.IDirective {
+import {ContentModel} from '../../../core/models/impl/ContentModel';
+export class TweetContentComponent implements ng.IComponentOptions {
     public controller: Function = TweetContentController;
     public template: string = `
         <div>
@@ -24,7 +24,7 @@ export class TweetContentComponent implements ng.IDirective {
     `;
 }
 export class TweetContentController {
-    public static $inject: Array<string> = ["IContentModel"];
-    constructor(public model: IContentModel) {
+    public static $inject: Array<string> = ["ContentModel"];
+    constructor(public model: ContentModel) {
     }
 }

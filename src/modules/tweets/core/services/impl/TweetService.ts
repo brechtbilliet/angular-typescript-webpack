@@ -1,6 +1,5 @@
-import {ITweetService} from "../int/ITweetService";
 import {Tweet} from "../../entities/Tweet";
-export class TweetService implements ITweetService {
+export class TweetService {
     public getAll(): Array<Tweet> {
         var returnObj: Array<Tweet> = new Array<Tweet>();
         for (var i: number = 0; i < 5; i++) {

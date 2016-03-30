@@ -1,5 +1,5 @@
-import {ITopbarModel} from "../../../core/models/int/ITopbarModel";
-import {ISharedModel} from "../../../core/models/int/ISharedModel";
+import {TopbarModel} from '../../../core/models/impl/TopbarModel';
+import {SharedModel} from '../../../core/models/impl/SharedModel';
 export class TweetTopbarComponent implements ng.IComponentOptions{
     public controller: Function = TweetTopbarController;
     public template: string = `
@@ -20,9 +20,9 @@ export class TweetTopbarComponent implements ng.IComponentOptions{
     `;
 }
 export class TweetTopbarController {
-    public static $inject: Array<string> = ["ISharedModel", "ITopbarModel"];
+    public static $inject: Array<string> = ["SharedModel", "TopbarModel"];
 
-    constructor(public sharedModel: ISharedModel, public model: ITopbarModel) {
+    constructor(public sharedModel: SharedModel, public model: TopbarModel) {
     }
 
     public toggleCollapsed(): void {

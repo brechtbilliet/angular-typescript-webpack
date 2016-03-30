@@ -1,9 +1,8 @@
-import {ISharedModel} from "../int/ISharedModel";
-import {ITopbarModel} from "../int/ITopbarModel";
 import {TopbarModel} from "../impl/TopbarModel";
+import {SharedModel} from '../impl/SharedModel';
 describe("Model: TopbarModel", () => {
-    var sharedModelMock: ISharedModel;
-    var topbarModel: ITopbarModel;
+    var sharedModelMock: SharedModel;
+    var topbarModel: TopbarModel;
     beforeEach(() => {
         sharedModelMock = jasmine.createSpyObj("sharedModel", ["toggleTopbar", "toggleSidebar"]);
         sharedModelMock.tweets = [];

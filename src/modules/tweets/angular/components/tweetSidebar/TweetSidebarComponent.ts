@@ -1,6 +1,6 @@
-import {ISidebarModel} from "../../../core/models/int/ISidebarModel";
-import {ISharedModel} from "../../../core/models/int/ISharedModel";
-export class TweetSidebarComponent implements ng.IComponentOptions{
+import {SidebarModel} from '../../../core/models/impl/SidebarModel';
+import {SharedModel} from '../../../core/models/impl/SharedModel';
+export class TweetSidebarComponent implements ng.IComponentOptions {
     public template: string = `
         <div ng-class="{'sidebar-collapsed': $ctrl.sharedModel.sidebarCollapsed}">
             <div>
@@ -19,10 +19,11 @@ export class TweetSidebarComponent implements ng.IComponentOptions{
     public controller: Function = TweetSidebarController;
 }
 export class TweetSidebarController {
-    public static $inject: Array<string> = ["ISidebarModel", "ISharedModel"];
+    public static $inject: Array<string> = ["SidebarModel", "SharedModel"];
 
-    constructor(public model: ISidebarModel, public sharedModel: ISharedModel) {
+    constructor(public model: SidebarModel, public sharedModel: SharedModel) {
     }
+
     public toggleCollapsed(): void {
         this.model.toggleCollapsed();
     }

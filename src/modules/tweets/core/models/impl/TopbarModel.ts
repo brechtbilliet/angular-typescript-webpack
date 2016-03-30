@@ -1,13 +1,10 @@
-import {ITopbarModel} from "../int/ITopbarModel";
-import {ISharedModel} from "../int/ISharedModel";
 import {Tweet} from "../../entities/Tweet";
-export class TopbarModel implements ITopbarModel {
-    public static $inject: Array<string> = ["ISharedModel"];
+import {SharedModel} from './SharedModel';
+export class TopbarModel {
+    public static $inject: Array<string> = ["SharedModel"];
     public tweetContent: string;
 
-    private sharedModel: ISharedModel;
-
-    constructor(sharedModel: ISharedModel) {
+    constructor(private sharedModel: SharedModel) {
         this.sharedModel = sharedModel;
     }
 

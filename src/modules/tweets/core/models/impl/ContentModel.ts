@@ -1,15 +1,11 @@
-import {IContentModel} from "../int/IContentModel";
 import {Tweet} from "../../entities/Tweet";
-import {ISharedModel} from "../int/ISharedModel";
+import {SharedModel} from './SharedModel';
 
-export class ContentModel implements IContentModel {
-    public static $inject: Array<string> = ["ISharedModel"];
+export class ContentModel {
+    public static $inject: Array<string> = ["SharedModel"];
     public tweets: Array<Tweet>;
 
-    private sharedModel: ISharedModel;
-
-    constructor(sharedModel: ISharedModel) {
-        this.sharedModel = sharedModel;
+    constructor(sharedModel: SharedModel) {
         this.tweets = sharedModel.tweets;
     }
 }

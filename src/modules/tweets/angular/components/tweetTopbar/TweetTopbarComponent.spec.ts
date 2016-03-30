@@ -2,20 +2,20 @@ import "angular";
 import "angular-mocks";
 import "../../index";
 import {ComponentTest} from "../../../../util/ComponentTest";
-import {ITopbarModel} from "../../../core/models/int/ITopbarModel";
-import {ISharedModel} from "../../../core/models/int/ISharedModel";
 import 'phantomjs-polyfill';
 import {TweetTopbarController} from "./TweetTopbarComponent";
+import {TopbarModel} from '../../../core/models/impl/TopbarModel';
+import {SharedModel} from '../../../core/models/impl/SharedModel';
 
 describe("Component TweetTopbarComponent", () => {
     var directiveTest: ComponentTest<TweetTopbarController>;
-    var sharedModelMock: ISharedModel;
-    var topbarModelMock: ITopbarModel;
+    var sharedModelMock: SharedModel;
+    var topbarModelMock: TopbarModel;
     beforeEach(angular.mock.module("app.tweets", ($provide: any) => {
-        topbarModelMock = <ITopbarModel>jasmine.createSpyObj("topbarModel", ["toggleCollapsed", "addTweet"]);
-        sharedModelMock = <ISharedModel>jasmine.createSpyObj("sharedModel", ["toggleTopbar", "toggleSidebar"]);
-        $provide.service("ISharedModel", () =>  sharedModelMock);
-        $provide.service("ITopbarModel", () =>  topbarModelMock);
+        topbarModelMock = <TopbarModel>jasmine.createSpyObj("topbarModel", ["toggleCollapsed", "addTweet"]);
+        sharedModelMock = <SharedModel>jasmine.createSpyObj("sharedModel", ["toggleTopbar", "toggleSidebar"]);
+        $provide.service("SharedModel", () =>  sharedModelMock);
+        $provide.service("TopbarModel", () =>  topbarModelMock);
     }));
     beforeEach(() => {
         directiveTest = new ComponentTest<TweetTopbarController>("<tweet-topbar></tweet-topbar>", "tweetTopbar");

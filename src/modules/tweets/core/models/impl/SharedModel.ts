@@ -1,33 +1,21 @@
-import {ISharedModel} from "../int/ISharedModel";
 import {Tweet} from "../../entities/Tweet";
-import {ITweetService} from "../../services/int/ITweetService";
-export class SharedModel implements ISharedModel {
-    public static $inject: Array<string> = ["ITweetService"];
+import {TweetService} from '../../services/impl/TweetService';
+export class SharedModel{
+    public static $inject: Array<string> = ["TweetService"];
     public tweets: Array<Tweet>;
-    private _topbarCollapsed: Boolean;
-    private _sidebarCollapsed: Boolean;
+    public topbarCollapsed: Boolean = false;
+    public sidebarCollapsed: Boolean = false;
 
-
-    public get topbarCollapsed(): Boolean {
-        return this._topbarCollapsed;
-    }
-
-    public get sidebarCollapsed(): Boolean {
-        return this._sidebarCollapsed;
-    }
-
-    constructor(tweetService: ITweetService) {
-        this._sidebarCollapsed = false;
-        this._topbarCollapsed = false;
+    constructor(tweetService: TweetService) {
         this.tweets = tweetService.getAll();
     }
 
     public toggleTopbar(): void {
-        this._topbarCollapsed = !this._topbarCollapsed;
+        this.topbarCollapsed = !this.topbarCollapsed;
     }
 
     public toggleSidebar(): void {
-        this._sidebarCollapsed = !this._sidebarCollapsed;
+        this.sidebarCollapsed = !this.sidebarCollapsed;
     }
 
 }
