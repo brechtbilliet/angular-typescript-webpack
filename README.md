@@ -30,7 +30,6 @@ open reports/coverage/index.html
 Build
 ```sh
 npm install
-tsd install
 npm run build
 ```
 
