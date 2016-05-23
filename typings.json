@@ -1,14 +1,18 @@
 {
-  "ambientDependencies": {
-    "angular": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular.d.ts#717a5fdb079f8dd7c19f1b22f7f656dd990f0ccf",
-    "angular-mocks": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular-mocks.d.ts#5d0f2126c8dac8fce0ff020218aea06607213b0d",
-    "angular-route": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular-route.d.ts#717a5fdb079f8dd7c19f1b22f7f656dd990f0ccf",
-    "bootstrap": "github:DefinitelyTyped/DefinitelyTyped/bootstrap/bootstrap.d.ts#5ea7d92bb39c7a26f49dc3de2c566d5ae325e19e",
-    "jasmine": "github:DefinitelyTyped/DefinitelyTyped/jasmine/jasmine.d.ts#5d0f2126c8dac8fce0ff020218aea06607213b0d",
-    "jquery": "github:DefinitelyTyped/DefinitelyTyped/jquery/jquery.d.ts#717a5fdb079f8dd7c19f1b22f7f656dd990f0ccf",
-    "jwt-decode": "github:DefinitelyTyped/DefinitelyTyped/jwt-decode/jwt-decode.d.ts#e2e1e881bb57431fbbe9289ac4da1fea928dc84c",
-    "lodash": "github:DefinitelyTyped/DefinitelyTyped/lodash/lodash.d.ts#5ea7d92bb39c7a26f49dc3de2c566d5ae325e19e",
-    "source-map": "github:DefinitelyTyped/DefinitelyTyped/source-map/source-map.d.ts#5d0f2126c8dac8fce0ff020218aea06607213b0d",
-    "uglify-js": "github:DefinitelyTyped/DefinitelyTyped/uglify-js/uglify-js.d.ts#5d0f2126c8dac8fce0ff020218aea06607213b0d"
+  "globalDependencies": {
+    "angular": "registry:dt/angular#1.5.0+20160517064839",
+    "angular-route": "registry:dt/angular-route#1.3.0+20160317120654",
+    "bootstrap": "registry:dt/bootstrap#3.3.5+20160316155526",
+    "jquery": "registry:dt/jquery#1.10.0+20160417213236",
+    "jwt-decode": "registry:dt/jwt-decode#1.4.0+20160317120654",
+    "source-map": "registry:dt/source-map#0.0.0+20160317120654",
+    "uglify-js": "registry:dt/uglify-js#2.6.1+20160316155526"
+  },
+  "dependencies": {
+    "lodash": "registry:npm/lodash#4.0.0+20160416211519"
+  },
+  "globalDevDependencies": {
+    "angular-mocks": "registry:dt/angular-mocks#1.3.0+20160425155016",
+    "jasmine": "registry:dt/jasmine#2.2.0+20160505161446"
   }
 }
