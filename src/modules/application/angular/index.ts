@@ -1,4 +1,4 @@
-import "angular";
+import * as angular from "angular";
 
 import {StarComponent} from "./components/star/StarComponent";
 import {TwitterApplicationComponent} from "./components/twitterApplication/TwitterApplicationComponent";

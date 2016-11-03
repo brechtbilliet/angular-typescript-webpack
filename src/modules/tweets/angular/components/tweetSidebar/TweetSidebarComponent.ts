@@ -16,7 +16,7 @@ export class TweetSidebarComponent implements ng.IComponentOptions {
             </div>
         </div>
     `
-    public controller: Function = TweetSidebarController;
+    public controller = TweetSidebarController;
 }
 export class TweetSidebarController {
     public static $inject: Array<string> = ["SidebarModel", "SharedModel"];

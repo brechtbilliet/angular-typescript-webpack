@@ -1,3 +1,4 @@
+import * as angular from "angular";
 import IRootScopeService = angular.IRootScopeService;
 import ICompileService = angular.ICompileService;
 export class ComponentTest<TController> {

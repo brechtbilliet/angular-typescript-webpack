@@ -1,6 +1,6 @@
 import {ContentModel} from '../../../core/models/impl/ContentModel';
 export class TweetContentComponent implements ng.IComponentOptions {
-    public controller: Function = TweetContentController;
+    public controller = TweetContentController;
     public template: string = `
         <div>
             <h2>Feed</h2>

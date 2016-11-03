@@ -1,6 +1,6 @@
 import {SharedModel} from '../../../core/models/impl/SharedModel';
 export class PageTweetsComponent implements ng.IComponentOptions{
-    public controller: Function = PageTweetsController;
+    public controller = PageTweetsController;
     public template: string = `
         <tweet-sidebar ng-class="{'sidebar-collapsed': $ctrl.sharedModel.sidebarCollapsed}"></tweet-sidebar>
         <tweet-main></tweet-main>

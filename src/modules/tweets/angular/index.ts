@@ -1,4 +1,4 @@
-import "angular";
+import * as angular from "angular";
 import "angular-route";
 import {config as routesConfig} from "./configs/routes";
 import {PageTweetsComponent} from "./components/pageTweets/PageTweetsComponent";
