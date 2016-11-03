@@ -12,8 +12,8 @@
   "author": "Brecht Billiet <billietbrecht@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "angular": "1.5.5",
-    "angular-route": "1.5.5",
+    "angular": "~1.5.8",
+    "angular-route": "~1.5.8",
     "bootstrap": "3.3.6",
     "font-awesome": "4.6.1",
     "jquery": "2.2.4",
@@ -51,6 +51,6 @@
     "typings": "1.0.4",
     "url-loader": "0.5.7",
     "wallaby-webpack": "0.0.22",
-    "webpack": "1.13.1"
+    "webpack": "~1.13.3"
   }
 }
