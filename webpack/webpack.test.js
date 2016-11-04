@@ -1,3 +1,4 @@
+var preloaders = require("./preloaders");
 var loaders = require("./loaders");
 var webpack = require('webpack');
 module.exports = {
@@ -23,6 +24,7 @@ module.exports = {
     })
   ],
   module: {
+    preLoaders:preloaders,
     loaders: loaders,
     postLoaders: [
       {
@@ -31,6 +33,10 @@ module.exports = {
         loader: 'istanbul-instrumenter'
       }
     ]
+  },
+  tslint: {
+        emitErrors: true,
+        failOnHint: true
   }
 };
 
