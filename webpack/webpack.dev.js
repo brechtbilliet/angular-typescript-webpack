@@ -15,7 +15,7 @@ module.exports = {
     resolveLoader: {
         modulesDirectories: ["node_modules"]
     },
-    devtool: "source-map",
+    devtool: "inline-eval-cheap-source-map",
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
