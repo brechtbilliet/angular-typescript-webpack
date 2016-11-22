@@ -1,10 +1,8 @@
 import {SharedModel} from '../../../core/models/impl/SharedModel';
+const template: string = require('./TweetMainComponent.html');
 export class TweetMainComponent implements ng.IComponentOptions{
     public controller: Function = TweetMainController;
-    public template: string = `
-        <tweet-topbar ng-class="{'topbar-collapsed': $ctrl.sharedModel.topbarCollapsed}"></tweet-topbar>
-        <tweet-content></tweet-content>
-    `;
+    public template: string = template;
 }
 export class TweetMainController {
     public static $inject: Array<string> = ["SharedModel"];
