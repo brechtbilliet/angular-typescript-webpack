@@ -1,4 +1,5 @@
 var loaders = require("./loaders");
+var preloaders = require("./preloaders");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
 
@@ -37,6 +38,11 @@ module.exports = {
         })
     ],
     module:{
+        preLoaders:preloaders,
         loaders: loaders
-    }
+    },
+    tslint: {
+        emitErrors: true,
+        failOnHint: true
+  }
 };

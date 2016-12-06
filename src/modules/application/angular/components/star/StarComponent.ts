@@ -2,7 +2,7 @@ export class StarComponent implements ng.IComponentOptions {
     public bindings: any = {
         starred: "="
     };
-    public controller: Function = StarController;
+    public controller: any = StarController;
     public template: string =
         `<i class="fa fa-star fa-2x"
             ng-class="{'starred': $ctrl.starred}"

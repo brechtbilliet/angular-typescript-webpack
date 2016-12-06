@@ -13,9 +13,7 @@
     "node_modules",
     "dist",
     "dev",
-    "typings/main.d.ts",
-    "typings/main",
     "reports"
   ],
-  "version": "1.7.5"
+  "version": "2.0.6"
 }

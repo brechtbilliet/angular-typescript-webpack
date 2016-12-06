@@ -1,9 +1,9 @@
 import "../../index";
-import "angular";
+import * as angular from "angular";
 import "angular-mocks";
 import {ComponentTest} from "../../../../util/ComponentTest";
 import {StarController} from "./StarComponent";
-import 'phantomjs-polyfill';
+import "phantomjs-polyfill";
 
 describe("Component StarComponent", () => {
     var directiveTest: ComponentTest<StarController>;

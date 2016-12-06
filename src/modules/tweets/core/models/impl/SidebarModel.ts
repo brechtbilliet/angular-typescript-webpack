@@ -1,5 +1,5 @@
 import {Tweet} from "../../entities/Tweet";
-import {SharedModel} from './SharedModel';
+import {SharedModel} from "./SharedModel";
 export class SidebarModel {
     public static $inject: Array<string> = ["SharedModel"];
     public tweets: Array<Tweet>;

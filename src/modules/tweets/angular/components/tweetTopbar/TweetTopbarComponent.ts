@@ -1,7 +1,7 @@
-import {TopbarModel} from '../../../core/models/impl/TopbarModel';
-import {SharedModel} from '../../../core/models/impl/SharedModel';
-export class TweetTopbarComponent implements ng.IComponentOptions{
-    public controller: Function = TweetTopbarController;
+import {TopbarModel} from "../../../core/models/impl/TopbarModel";
+import {SharedModel} from "../../../core/models/impl/SharedModel";
+export class TweetTopbarComponent implements ng.IComponentOptions {
+    public controller: any = TweetTopbarController;
     public template: string = `
         <div>
             <div class="collapsed-content" ng-if="!$ctrl.sharedModel.topbarCollapsed">
