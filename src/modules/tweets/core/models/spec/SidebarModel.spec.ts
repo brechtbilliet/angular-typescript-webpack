@@ -1,5 +1,5 @@
 import {SidebarModel} from "../impl/SidebarModel";
-import {SharedModel} from '../impl/SharedModel';
+import {SharedModel} from "../impl/SharedModel";
 describe("Model: SidebarModel", () => {
     var sharedModelMock: SharedModel;
     var sidebarModel: SidebarModel;

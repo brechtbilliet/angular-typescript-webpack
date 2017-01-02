@@ -1,7 +1,7 @@
 import {SharedModel} from "../impl/SharedModel";
 import {Tweet} from "../../entities/Tweet";
 import Spy = jasmine.Spy;
-import {TweetService} from '../../services/impl/TweetService';
+import {TweetService} from "../../services/impl/TweetService";
 describe("model: SharedModel", () => {
     var tweetServiceMock: TweetService;
     var sharedModel: SharedModel;
