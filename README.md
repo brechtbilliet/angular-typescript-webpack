@@ -6,7 +6,6 @@ And this all with sourcemaps in production support!!
 ### Install
 
 ```sh
-npm i webpack typings typescript -g
 git clone git@github.com/brechtbilliet/angular-typescript-webpack.git
 cd angular-typescript-webpack
 npm install
