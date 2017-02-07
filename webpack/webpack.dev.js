@@ -2,6 +2,7 @@ var loaders = require("./loaders");
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
+var path = require('path');
 module.exports = {
     entry: ['./src/index.ts'],
     output: {
@@ -9,11 +10,11 @@ module.exports = {
         path: 'dist'
     },
     resolve: {
-        root: __dirname,
-        extensions: ['', '.ts', '.js', '.json']
-    },
-    resolveLoader: {
-        modulesDirectories: ["node_modules"]
+        modules: [
+            path.join(__dirname, "src"),
+            'node_modules'
+        ],
+        extensions: ['.ts', '.js', '.json','.css', '.scss']
     },
     devtool: "inline-eval-cheap-source-map",
     plugins: [

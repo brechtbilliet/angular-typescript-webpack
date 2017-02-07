@@ -4,9 +4,9 @@
   "description": "A seed project for a largescale angular architecture in webpack and typescript",
   "main": "/",
   "scripts": {
-    "start": "webpack --config webpack/webpack.dev.js --watch --NODE_ENV=dev",
+    "start": "webpack --config webpack/webpack.dev.js --watch",
     "test": "karma start --NODE_ENV=test",
-    "build": "webpack --config webpack/webpack.build.js --NODE_ENV=production"
+    "build": "webpack --config webpack/webpack.build.js"
   },
   "author": "Brecht Billiet <billietbrecht@gmail.com>",
   "license": "MIT",
@@ -17,8 +17,8 @@
     "@types/bootstrap": "~3.3.32",
     "@types/jasmine": "~2.5.37",
     "@types/jwt-decode": "~1.4.28",
-    "@types/lodash": "~4.14.38",
     "@types/source-map": "~0.1.29",
+    "@types/lodash": "~4.14.52",
     "@types/uglify-js": "~2.6.28",
     "angular": "~1.5.8",
     "angular-route": "~1.5.8",
@@ -49,18 +49,18 @@
     "karma-sourcemap-loader": "0.3.7",
     "karma-spec-reporter": "0.0.26",
     "karma-typescript-preprocessor": "~0.3.0",
-    "karma-webpack": "~1.8.0",
+    "karma-webpack": "~2.0.2",
     "node-sass": "~3.11.1",
     "phantomjs-polyfill": "0.0.2",
     "phantomjs-prebuilt": "~2.1.13",
     "raw-loader": "0.5.1",
     "sass-loader": "~4.0.2",
     "style-loader": "0.13.1",
-    "ts-loader": "~1.0.0",
-    "typescript": "~2.0.6",
+    "ts-loader": "~2.0.0",
+    "typescript": "~2.1.5",
     "typings": "~1.5.0",
     "url-loader": "0.5.7",
     "wallaby-webpack": "0.0.26",
-    "webpack": "~1.13.3"
+    "webpack": "~2.2.1"
   }
 }

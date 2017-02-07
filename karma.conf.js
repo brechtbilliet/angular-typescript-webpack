@@ -1,8 +1,7 @@
 'use strict';
 
 var webpackConfig = require('./webpack/webpack.test.js');
-require('phantomjs-polyfill')
-webpackConfig.entry = {};
+require('phantomjs-polyfill');
 
 module.exports = function (config) {
     config.set({

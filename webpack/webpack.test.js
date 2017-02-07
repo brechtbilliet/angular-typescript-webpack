@@ -1,20 +1,21 @@
-var preloaders = require("./preloaders");
-var loaders = require("./loaders");
 var webpack = require('webpack');
+var path = require('path');
+var loaders = require("./loaders");
+
 module.exports = {
   entry: ['./src/index.ts'],
   output: {
     filename: 'build.js',
     path: 'tmp'
   },
-  resolve: {
-    root: __dirname,
-    extensions: ['', '.ts', '.js', '.json']
-  },
-  resolveLoader: {
-    modulesDirectories: ["node_modules"]
-  },
-  devtool: "source-map-inline",
+    resolve: {
+        modules: [
+            path.join(__dirname, "src"),
+            'node_modules'
+        ],
+        extensions: ['.ts', '.js', '.json','.css', '.scss']
+    },
+    devtool: "source-map-inline",
   plugins: [
     new webpack.ProvidePlugin({
       $: 'jquery',
@@ -23,20 +24,8 @@ module.exports = {
       'window.jquery': 'jquery'
     })
   ],
-  module: {
-    preLoaders:preloaders,
-    loaders: loaders,
-    postLoaders: [
-      {
-        test: /^((?!\.spec\.ts).)*.ts$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'istanbul-instrumenter'
-      }
-    ]
-  },
-  tslint: {
-        emitErrors: true,
-        failOnHint: true
-  }
+    module:{
+        loaders: loaders
+    }
 };
 
