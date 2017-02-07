@@ -1,7 +1,7 @@
 var loaders = require("./loaders");
-var preloaders = require("./preloaders");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
     entry: ['./src/index.ts'],
@@ -11,16 +11,15 @@ module.exports = {
     },
     devtool: 'source-map',
     resolve: {
-        root: __dirname,
-        extensions: ['', '.ts', '.js', '.json']
-    },
-    resolveLoader: {
-        modulesDirectories: ["node_modules"]
+        modules: [
+            path.join(__dirname, "src"),
+            'node_modules'
+        ],
+        extensions: ['.ts', '.js', '.json','.css', '.scss']
     },
     plugins: [
         new webpack.optimize.UglifyJsPlugin(
             {
-                warning: false,
                 mangle: true,
                 comments: false
             }
@@ -38,11 +37,6 @@ module.exports = {
         })
     ],
     module:{
-        preLoaders:preloaders,
         loaders: loaders
-    },
-    tslint: {
-        emitErrors: true,
-        failOnHint: true
-  }
+    }
 };
