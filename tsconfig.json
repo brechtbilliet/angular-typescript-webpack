@@ -6,7 +6,12 @@
     "sourceMap": true,
     "module": "commonjs",
     "experimentalDecorators": true,
-    "outDir": "out"
+    "outDir": "out",
+    "types": [
+      "angular",
+      "angular-mocks",
+      "jasmine"
+    ]
   },
   "exclude": [
     "out",
